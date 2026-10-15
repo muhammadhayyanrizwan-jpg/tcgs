@@ -1,0 +1,1081 @@
+/* ==========================================================================
+   THE CITY GRAMMAR SCHOOL (TCGS) - CONTACT US PAGE LAYOUT STYLES
+   Layouts: Short Hero, Masonry Staggered Contact Tiles, Split Form & Live Office Panel, Full-Width Map with Action Overlay, Social Connect
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SHORT HERO
+   -------------------------------------------------------------------------- */
+.contact-hero {
+  background: linear-gradient(180deg, #F6F8FC 0%, #FFFFFF 100%);
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0 3rem 0;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. CONTACT CARDS - Staggered Masonry 4-Tile Layout
+   -------------------------------------------------------------------------- */
+.contact-tiles-section {
+  background: #FFFFFF;
+  padding-bottom: 4rem;
+}
+
+.contact-tiles-masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.contact-card-tile {
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.75rem;
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stagger heights for masonry rhythm */
+.contact-card-tile:nth-child(1) { margin-top: 0px; }
+.contact-card-tile:nth-child(2) { margin-top: 24px; }
+.contact-card-tile:nth-child(3) { margin-top: 8px; }
+.contact-card-tile:nth-child(4) { margin-top: 32px; }
+
+.contact-card-tile:hover {
+  transform: translateY(-8px);
+  background: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+.tile-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.contact-card-tile:hover .tile-icon-box {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.tile-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.tile-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.tile-value {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  word-break: break-word;
+}
+
+.tile-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.tile-action-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.contact-card-tile:hover .tile-action-link svg {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   3. SEND US A MESSAGE - Premium 5/7 Split-Card Layout
+   Brand: Primary #1F3A93 | Secondary #0F1F4B | Accent Gold #F5B301 | Bg #F6F8FC
+   -------------------------------------------------------------------------- */
+.send-message-section {
+  background: var(--color-bg);
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Navy Dot-Grid Canvas Background */
+.contact-dots-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 31, 75, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating Gold Arch Shape Peeking Behind Card */
+.contact-gold-arch {
+  position: absolute;
+  top: 10%;
+  right: 4%;
+  width: 240px;
+  height: 320px;
+  border: 3.5px solid rgba(245, 179, 1, 0.4);
+  border-radius: 140px 140px 0 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGoldArch 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatGoldArch {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-18px) rotate(1.5deg); }
+}
+
+.contact-section-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+}
+
+/* Split Card (5/7 columns, rounded-3xl, soft shadow) */
+.contact-split-card {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 24px 60px -10px rgba(15, 31, 75, 0.12), 0 0 1px 1px rgba(15, 31, 75, 0.04);
+  border: 1px solid rgba(213, 220, 235, 0.8);
+}
+
+/* ==========================================================================
+   LEFT PANEL (Deep Navy #0F1F4B) - 5 Columns
+   ========================================================================== */
+.contact-left-panel {
+  background: #0F1F4B;
+  padding: clamp(2.5rem, 5vw, 3.75rem);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Faint Arch Outline Background */
+.left-panel-arch-decor {
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.left-panel-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Gold Pill Label */
+.left-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 179, 1, 0.15);
+  border: 1px solid rgba(245, 179, 1, 0.4);
+  color: #F5B301;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: fit-content;
+  margin-bottom: 1.25rem;
+}
+
+.left-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F5B301;
+}
+
+/* Title with Hand-Drawn Gold Underline */
+.left-panel-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight-message {
+  position: relative;
+  display: inline-block;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.hand-drawn-underline {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 12px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Paragraph */
+.left-panel-desc {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+/* Three Info Rows (Phone, WhatsApp, Email) */
+.left-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
+}
+
+.left-info-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: transform 0.2s ease;
+}
+
+.left-info-row:hover {
+  transform: translateX(4px);
+}
+
+.gold-circle-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(245, 179, 1, 0.15);
+  border: 1.5px solid rgba(245, 179, 1, 0.45);
+  color: #F5B301;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.left-info-row:hover .gold-circle-icon {
+  background: #F5B301;
+  color: #0F1F4B;
+  transform: scale(1.08);
+}
+
+.left-info-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.left-info-val {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+/* Glass Effect Office Hours Card */
+.left-office-glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 2rem;
+}
+
+.left-office-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.left-office-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.left-office-title-wrap svg {
+  color: var(--color-accent);
+}
+
+.left-office-glass-card .live-status-pill {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.left-office-timing {
+  font-size: 0.92rem;
+  color: #E2E8F0;
+  margin-bottom: 0.25rem;
+}
+
+.left-office-timing strong {
+  color: #F5B301;
+}
+
+.left-office-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Social Icons */
+.left-social-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.left-social-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.left-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.left-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.left-social-btn:hover {
+  background: #1F3A93;
+  border-color: #F5B301;
+  color: #F5B301;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RIGHT PANEL (Clean White) - 7 Columns
+   ========================================================================== */
+.contact-right-panel {
+  background: #FFFFFF;
+  padding: clamp(2.25rem, 5vw, 3.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* 2-Column Grid on Desktop, 1-Column on Mobile */
+.contact-form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+/* Label on Top (Inter Medium 14px, #0F1F4B, red asterisk for required) */
+.contact-field-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #0F1F4B;
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.req-star {
+  color: #DC2626;
+  font-weight: 700;
+}
+
+.contact-field-group:focus-within .contact-field-label {
+  color: #1F3A93;
+}
+
+/* Input Wrapper & Leading Icons */
+.contact-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.field-leading-icon {
+  position: absolute;
+  left: 16px;
+  color: #8C98AC;
+  pointer-events: none;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.contact-field-group:focus-within .field-leading-icon {
+  color: #1F3A93;
+}
+
+/* Inputs (12px radius, 1.5px border #D5DCEB, background #F6F8FC, 14px 16px padding, 52px height) */
+.contact-input {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 1.5px solid #D5DCEB;
+  background: #F6F8FC;
+  padding: 14px 42px 14px 44px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #1E293B;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-input::placeholder {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+/* Focus State: Border turns primary #1F3A93, soft blue glow ring (0 0 0 4px rgba(31,58,147,.15)) */
+.contact-input:focus {
+  background: #FFFFFF;
+  border-color: #1F3A93;
+  box-shadow: 0 0 0 4px rgba(31, 58, 147, 0.15);
+}
+
+/* Textarea (min-height 140px, resizable vertically only) */
+.contact-input.contact-textarea {
+  height: auto;
+  min-height: 140px;
+  resize: vertical;
+  padding-top: 14px;
+  line-height: 1.5;
+}
+
+.textarea-wrapper .field-leading-icon.textarea-icon {
+  top: 18px;
+}
+
+/* Custom Select (Native look removed, custom chevron icon, same styling) */
+.contact-select-wrapper {
+  position: relative;
+}
+
+.contact-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-color: #F6F8FC;
+}
+
+.field-trailing-chevron {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8C98AC;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contact-field-group:focus-within .field-trailing-chevron {
+  color: #1F3A93;
+}
+
+/* Inline Validation States */
+.contact-input.is-invalid {
+  border-color: #DC2626 !important;
+  background: #FEF2F2 !important;
+}
+
+.contact-input.is-valid {
+  border-color: #16A34A !important;
+  background: #F0FDF4 !important;
+}
+
+.field-valid-tick {
+  position: absolute;
+  right: 16px;
+  font-weight: 800;
+  color: #16A34A;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contact-input.is-valid ~ .field-valid-tick {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-select-wrapper .contact-input.is-valid ~ .field-valid-tick {
+  right: 38px;
+}
+
+.field-validation-msg {
+  font-size: 0.8rem;
+  color: #DC2626;
+  margin-top: 0.35rem;
+  display: none;
+  font-weight: 500;
+}
+
+.field-validation-msg.is-visible {
+  display: block;
+}
+
+/* Submit Button & Trust Line */
+.contact-submit-area {
+  margin-top: 1.25rem;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  height: 56px;
+  background-color: #1F3A93;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(31, 58, 147, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit-btn:hover {
+  background-color: #152865;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(31, 58, 147, 0.35);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+.btn-plane-icon {
+  transition: transform 0.25s ease;
+}
+
+.contact-submit-btn:hover .btn-plane-icon {
+  transform: translateX(5px);
+}
+
+/* Loading spinner state */
+.btn-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #FFFFFF;
+  animation: spin 0.8s linear infinite;
+}
+
+.contact-submit-btn.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+.contact-submit-btn.is-loading .btn-text,
+.contact-submit-btn.is-loading .btn-plane-icon {
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.contact-trust-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #64748B;
+  margin-top: 1rem;
+}
+
+.contact-trust-line svg {
+  color: #94A3B8;
+}
+
+/* ==========================================================================
+   SUCCESS STATE (Hidden on load, shown ONLY on successful submit)
+   ========================================================================== */
+.contact-success-state-card {
+  display: none; /* Fix: Hidden by default on page load */
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3.5rem) 1.5rem;
+  animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-success-state-card.is-active {
+  display: block;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.success-checkmark-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.success-checkmark-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.success-circle-bg {
+  stroke: #16A34A;
+  stroke-width: 3;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-miterlimit: 10;
+  animation: strokeCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.success-check-path {
+  transform-origin: 50% 50%;
+  stroke: #16A34A;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: strokeCheck 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+}
+
+@keyframes strokeCircle {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes strokeCheck {
+  100% { stroke-dashoffset: 0; }
+}
+
+.success-state-heading {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0F1F4B;
+  margin-bottom: 0.75rem;
+}
+
+.success-state-text {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 2rem auto;
+}
+
+.success-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-success {
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 0.75rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp-success:hover {
+  background-color: #1ebd5b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+/* ==========================================================================
+   URDU / RTL SPECIALIZATION
+   ========================================================================== */
+html[dir="rtl"] .contact-split-card {
+  direction: rtl;
+}
+
+html[dir="rtl"] .field-leading-icon {
+  left: auto;
+  right: 16px;
+}
+
+html[dir="rtl"] .contact-input {
+  padding: 14px 44px 14px 42px;
+  text-align: right;
+}
+
+html[dir="rtl"] .field-trailing-chevron {
+  right: auto;
+  left: 16px;
+}
+
+html[dir="rtl"] .field-valid-tick {
+  right: auto;
+  left: 16px;
+}
+
+html[dir="rtl"] .contact-select-wrapper .contact-input.is-valid ~ .field-valid-tick {
+  right: auto;
+  left: 38px;
+}
+
+html[dir="rtl"] .contact-submit-btn:hover .btn-plane-icon {
+  transform: translateX(-5px);
+}
+
+html[dir="rtl"] .left-info-row:hover {
+  transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 991px) {
+  .contact-split-card {
+    grid-template-columns: 1fr;
+  }
+  .contact-gold-arch {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Accessibility: Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contact-gold-arch {
+    animation: none;
+  }
+  .success-circle-bg,
+  .success-check-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. FULL-WIDTH MAP WITH ACTION OVERLAY
+   -------------------------------------------------------------------------- */
+.map-fullwidth-section {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.map-fullwidth-section iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+.map-action-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 31, 75, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+.map-overlay-text {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   5. SOCIAL CONNECT & QUICK TEASER
+   -------------------------------------------------------------------------- */
+.social-connect-section {
+  background: #FFFFFF;
+  padding: 4.5rem 0;
+}
+
+.social-connect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.social-channel-card {
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.social-channel-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.social-channel-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.social-channel-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.social-channel-card:hover .social-channel-icon {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.social-channel-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.social-channel-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   CONSOLIDATED RESPONSIVE QUERIES FOR CONTACT PAGE
+   ========================================================================== */
+@media (max-width: 991px) {
+  .contact-tiles-masonry {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .contact-card-tile {
+    margin-top: 0 !important;
+  }
+
+  .contact-split-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-gold-arch {
+    display: none;
+  }
+
+  .social-connect-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    padding: 3rem 0;
+  }
+
+  .contact-tiles-masonry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-card-tile {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .contact-form-grid-2col {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .contact-left-panel {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .contact-right-panel {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .left-office-glass-card {
+    padding: 1rem 1.15rem;
+  }
+
+  .left-office-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .map-fullwidth-section {
+    height: clamp(300px, 60vw, 440px);
+  }
+
+  .map-fullwidth-section iframe {
+    aspect-ratio: 4/3;
+    height: auto !important;
+    min-height: 260px;
+  }
+
+  .map-action-overlay {
+    width: calc(100% - 32px);
+    max-width: 420px;
+    padding: 0.85rem 1.15rem;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 16px;
+    gap: 0.65rem;
+    bottom: 16px;
+  }
+
+  .map-action-overlay .btn {
+    width: 100%;
+  }
+
+  .social-channel-card {
+    padding: 1.5rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .success-actions-row {
+    flex-direction: column;
+  }
+
+  .success-actions-row .btn,
+  .success-actions-row .btn-whatsapp-success {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

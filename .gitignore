@@ -1,0 +1,27 @@
+# ==========================================================================
+# The City Grammar School (TCGS) - Git Ignore Configuration
+# Only essential website files (HTML, CSS, JS, Active Media) are tracked
+# ==========================================================================
+
+# Temporary / Testing files
+test_logo.html
+LOGO.png
+
+# Scripts & logs
+serve.js
+deploy.bat
+deploy.ps1
+deploy_log.txt
+*.log
+
+# OS & Editor generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Node / Dependencies (if any generated)
+node_modules/
+.wrangler/
