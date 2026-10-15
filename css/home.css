@@ -1018,9 +1018,11 @@ html[dir="rtl"] .admissions-ribbon {
   z-index: 10;
 }
 
+.visit-floating-card h2,
 .visit-floating-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.85rem;
+  color: var(--color-secondary);
 }
 
 .visit-info-line {

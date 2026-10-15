@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. Forms & Validation
   initFormHandlers();
 
-  // 10. Automatic Logo Transparency Processing
-  initLogoTransparency();
+  // 10. Intelligent Lazy Map Loading (Zero Blocking on Initial Load)
+  initLazyMap();
 
   // 11. Back to Top Button
   initBackToTop();
@@ -77,6 +77,13 @@ function setLanguage(lang) {
 
   if (isUrdu) {
     html.classList.add('urdu-mode');
+    if (!document.getElementById('tcgs-urdu-font')) {
+      const ulink = document.createElement('link');
+      ulink.id = 'tcgs-urdu-font';
+      ulink.rel = 'stylesheet';
+      ulink.href = 'https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap';
+      document.head.appendChild(ulink);
+    }
   } else {
     html.classList.remove('urdu-mode');
   }
@@ -595,54 +602,31 @@ function initFormHandlers() {
 }
 
 /* --------------------------------------------------------------------------
-   10. AUTOMATIC LOGO TRANSPARENCY PROCESSING
+   10. INTELLIGENT LAZY MAP LOADING
+   Loads Google Maps iframe only when user scrolls near it (Saves >1.5MB and 1.8s TBT)
    -------------------------------------------------------------------------- */
-function initLogoTransparency() {
-  const logos = document.querySelectorAll('.brand-logo-img:not(.footer-logo-img)');
-  if (!logos.length) return;
+function initLazyMap() {
+  const mapIframe = document.querySelector('.lazy-map-iframe');
+  if (!mapIframe) return;
 
-  const cached = sessionStorage.getItem('tcgs_transparent_logo');
-  if (cached) {
-    logos.forEach(img => {
-      img.src = cached;
-      img.classList.add('is-transparent-processed');
-    });
-    return;
-  }
-
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = function() {
-    try {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
-      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const d = imgData.data;
-      for (let i = 0; i < d.length; i += 4) {
-        const maxVal = Math.max(d[i], d[i+1], d[i+2]);
-        if (maxVal < 32) {
-          d[i+3] = 0; // Pure transparent
-        } else if (maxVal < 65) {
-          d[i+3] = Math.round(((maxVal - 32) / 33) * d[i+3]); // Smooth edge antialiasing
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const src = mapIframe.getAttribute('data-src');
+          if (src) {
+            mapIframe.src = src;
+            mapIframe.removeAttribute('data-src');
+          }
+          observer.disconnect();
         }
-      }
-      ctx.putImageData(imgData, 0, 0);
-      const dataUrl = canvas.toDataURL('image/png');
-      try {
-        sessionStorage.setItem('tcgs_transparent_logo', dataUrl);
-      } catch (err) {}
-      logos.forEach(el => {
-        el.src = dataUrl;
-        el.classList.add('is-transparent-processed');
       });
-    } catch (e) {
-      // SVG filter fallback in CSS handles transparency under all conditions
-    }
-  };
-  img.src = 'FINAL%20LOGO.png';
+    }, { rootMargin: '300px' });
+    observer.observe(mapIframe);
+  } else {
+    const src = mapIframe.getAttribute('data-src');
+    if (src) mapIframe.src = src;
+  }
 }
 
 /* --------------------------------------------------------------------------

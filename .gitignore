@@ -13,6 +13,7 @@ deploy.bat
 deploy.ps1
 deploy_log.txt
 *.log
+*.backup.*
 
 # OS & Editor generated files
 .DS_Store
