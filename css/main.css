@@ -1457,6 +1457,54 @@ html[dir="rtl"] .back-to-top-btn {
   color: var(--color-accent);
 }
 
+/* Footer Developer Credits */
+.footer-credits {
+  color: #CBD5E1;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.footer-credits-link {
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-credits-link:hover {
+  color: var(--color-accent);
+}
+
+.footer-credits-link .credits-brand {
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.footer-credits-link:hover .credits-brand {
+  color: var(--color-accent);
+}
+
+.footer-credits-link .credit-flags {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.footer-credits-link .credit-flag {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
 /* Instagram URL Visibility Rule:
    Hidden by default when href is empty or "#", shown only when valid */
 .social-icon-instagram[href=""],
