@@ -1624,31 +1624,37 @@ html[dir="rtl"] .arch-outlined-num {
 /* Dynamic Years Count Banner */
 .since-count-banner {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.75rem;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 0.85rem);
   background: #FFFFFF;
   border: 2px solid var(--color-accent);
-  padding: 0.85rem 2rem;
+  padding: clamp(0.5rem, 2vw, 0.85rem) clamp(1rem, 3.5vw, 2rem);
   border-radius: 100px;
   box-shadow: 0 10px 25px rgba(245, 179, 1, 0.18);
   margin-bottom: 1.75rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .since-count-num {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
   color: var(--color-secondary);
   line-height: 1;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .since-count-text {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: clamp(0.8rem, 2.4vw, 1.05rem);
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-align: left;
 }
 
 .since-1992-body {
@@ -1660,6 +1666,25 @@ html[dir="rtl"] .arch-outlined-num {
 }
 
 @media (max-width: 480px) {
+  .since-count-banner {
+    padding: 0.5rem 1rem !important;
+    gap: 0.55rem !important;
+    border-radius: 100px !important;
+  }
+
+  .since-count-num {
+    font-size: clamp(1.85rem, 7vw, 2.4rem) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .since-count-text {
+    font-size: clamp(0.72rem, 2.8vw, 0.88rem) !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
   .founder-caption-name {
     font-size: clamp(0.92rem, 4.4vw, 1.25rem) !important;
     white-space: nowrap !important;
