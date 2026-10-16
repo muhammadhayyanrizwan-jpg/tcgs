@@ -15,6 +15,7 @@ deploy.bat
 deploy.ps1
 deploy_log.txt
 *.log
+report*.json
 *.backup.*
 
 # OS & Editor generated files
