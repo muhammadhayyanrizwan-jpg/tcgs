@@ -468,17 +468,15 @@
 .founder-signature-title {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #64748B;
+  color: #475569;
   font-weight: 500;
   margin-top: 0.15rem;
 }
 
 /* Scroll Reveal Animations */
 .reveal-founder-photo {
-  opacity: 0;
-  transform: translateX(-35px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .reveal-founder-photo.is-revealed,
@@ -488,10 +486,8 @@
 }
 
 .reveal-founder-text {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .reveal-founder-text.is-revealed,
@@ -660,8 +656,8 @@ html[dir="rtl"] .founder-deco-quote {
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   background: var(--color-success-light);
-  color: var(--color-success);
-  border: 1px dashed var(--color-success);
+  color: #14532D;
+  border: 1px dashed #15803D;
 }
 
 .stat-num-row {
@@ -682,7 +678,7 @@ html[dir="rtl"] .founder-deco-quote {
 .stat-unit {
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--color-success);
+  color: #15803D;
 }
 
 .stat-label {
@@ -1027,7 +1023,7 @@ html[dir="rtl"] .deck-sticky-col {
 .deck-counter-total {
   font-size: 1rem;
   font-weight: 600;
-  color: #94A3B8;
+  color: #475569;
 }
 
 .deck-progress-track {
@@ -1137,8 +1133,7 @@ html[dir="rtl"] .deck-sticky-col {
 
 .stack-card.is-behind {
   transform: scale(0.94) translateY(-14px);
-  opacity: 0.78;
-  filter: blur(0.3px);
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -1262,9 +1257,9 @@ html[dir="rtl"] .card-corner-shape {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(22, 163, 74, 0.1);
-  color: #16A34A;
-  border: 1px solid rgba(22, 163, 74, 0.25);
+  background: rgba(22, 163, 74, 0.12);
+  color: #14532D;
+  border: 1px solid rgba(21, 128, 61, 0.3);
   border-radius: 100px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -1537,8 +1532,8 @@ html[dir="rtl"] .card-corner-shape {
 
 /* Staggered Entry Animation (Progressive Enhancement) */
 .compass-arches-stage.js-compass-ready .arch-door {
-  opacity: 0;
-  transform: translateY(38px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .compass-arches-stage.js-compass-ready.is-inview .arch-door-navy {
@@ -2602,13 +2597,13 @@ html[dir="rtl"] .admissions-ribbon {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #CBD5E1;
+  color: #475569;
   line-height: 1;
   transition: color var(--transition-fast);
 }
 
 .promise-tab-btn.is-active .promise-tab-num {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .promise-tab-title {
@@ -2949,7 +2944,7 @@ html[dir="rtl"] .admissions-ribbon {
 .btn-quick-check {
   height: 48px;
   padding: 0 1.6rem;
-  background-color: #16A34A; /* Success Green */
+  background-color: #15803D; /* High-Contrast Success Green */
   color: #FFFFFF;
   border: none;
   border-radius: 100px;
@@ -2962,13 +2957,13 @@ html[dir="rtl"] .admissions-ribbon {
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3);
 }
 
 .btn-quick-check:hover {
-  background-color: #15803D;
+  background-color: #14532D;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
+  box-shadow: 0 6px 18px rgba(21, 128, 61, 0.4);
 }
 
 @media (max-width: 900px) {

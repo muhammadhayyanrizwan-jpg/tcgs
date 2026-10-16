@@ -1224,14 +1224,10 @@ function initEthicalCompassSection() {
       const isMobile = window.innerWidth < 768;
       if (isMobile && isInitial) {
         leftArch.classList.add('is-expanded');
-        leftArch.setAttribute('aria-expanded', 'true');
         rightArch.classList.remove('is-expanded');
-        rightArch.setAttribute('aria-expanded', 'false');
       } else if (!isMobile) {
         leftArch.classList.add('is-expanded');
-        leftArch.setAttribute('aria-expanded', 'true');
         rightArch.classList.add('is-expanded');
-        rightArch.setAttribute('aria-expanded', 'true');
       }
     }
     syncResponsiveExpandState(true);
@@ -1294,7 +1290,6 @@ function initEthicalCompassSection() {
         if (window.innerWidth < 768) {
           const willExpand = !arch.classList.contains('is-expanded');
           arch.classList.toggle('is-expanded', willExpand);
-          arch.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
         }
       });
 

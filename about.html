@@ -76,7 +76,7 @@
           <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="Facebook">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer" class="slim-top-social social-icon-instagram" aria-label="Instagram">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="slim-top-social social-icon-instagram" aria-label="Instagram" style="display: none;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
           </a>
           <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="LinkedIn">
@@ -89,7 +89,7 @@
     <!-- Main Navigation Bar -->
     <div class="container header-main">
       <a href="index.html" class="brand-logo" aria-label="The City Grammar School Homepage">
-        <img src="logo-transparent.png" alt="The City Grammar School Logo" class="brand-logo-img" width="56" height="56">
+        <img src="logo-transparent.png" alt="The City Grammar School Logo" class="brand-logo-img" width="56" height="56" fetchpriority="high" decoding="async">
         <div class="logo-text-group">
           <span class="logo-title" style="font-weight: 400;" data-i18n="brand_name">The City Grammar School</span>
           <span class="logo-subtitle" style="font-weight: 400;" data-i18n="brand_tagline">Karachi • Primary to Matric</span>
@@ -122,7 +122,7 @@
        1. PAGE HERO - Full-Width Image with Split-Color Overlay & Breadcrumb
        ========================================== -->
   <section class="about-hero" aria-label="About Us Header">
-    <div class="container reveal-fade-up">
+    <div class="container">
       <div class="about-hero-breadcrumb">
         <a href="index.html" data-i18n="nav_home">Home</a>
         <span>/</span>
@@ -141,23 +141,34 @@
   <section class="section about-overview-section" aria-label="Overview & Campus Heritage">
     <div class="container about-overview-grid">
       <!-- Floating Asymmetric Photo Collage -->
-      <div class="collage-container reveal-fade-up">
+      <div class="collage-container">
         <!-- Photo 1: Campus Event & Winners -->
         <div class="collage-photo photo-1">
           <img src="gallery/img 23.jpg"
-               alt="TCGS students celebrating achievements on podium">
+               alt="TCGS students celebrating achievements on podium"
+               width="800"
+               height="600"
+               decoding="async">
         </div>
 
         <!-- Photo 2: Sports & Co-Curricular Excellence -->
         <div class="collage-photo photo-2">
           <img src="gallery/img 26.jpg"
-               alt="TCGS martial arts and sports medalists on stage">
+               alt="TCGS martial arts and sports medalists on stage"
+               width="800"
+               height="600"
+               loading="lazy"
+               decoding="async">
         </div>
 
         <!-- Photo 3: Campus Morning Assembly -->
         <div class="collage-photo photo-3">
           <img src="gallery/img 27.jpg"
-               alt="TCGS students gathered during morning campus assembly">
+               alt="TCGS students gathered during morning campus assembly"
+               width="800"
+               height="600"
+               loading="lazy"
+               decoding="async">
         </div>
 
         <div class="collage-accent-badge">
@@ -166,7 +177,7 @@
       </div>
 
       <!-- Narrative Copy Block -->
-      <div class="overview-text-block reveal-fade-up">
+      <div class="overview-text-block">
         <div class="section-kicker" data-i18n="about_overview_kicker">Institutional Overview</div>
         <h2 data-i18n="about_overview_title">Navigating the Journey of <span class="stroke-highlight">Intellectual Growth</span></h2>
         <p data-i18n="about_overview_p1">
@@ -256,6 +267,7 @@
        ========================================== -->
   <section class="section founder-showcase-section" id="founderPhilosophy" aria-label="Founder's Philosophy">
     <div class="container">
+      <h2 class="sr-only">Founder's Philosophy and Leadership</h2>
       <div class="founder-grand-card">
         
         <!-- Photo Panel (Takes 42% on desktop, edge-to-edge with navy gradient & gold arch) -->
@@ -392,7 +404,7 @@
       <div class="compass-arches-stage" data-compass-stage>
 
         <!-- LEFT ARCH DOOR: Integrity (Pillar 01 • Moral Courage) -->
-        <article class="arch-door arch-door-navy is-expanded" data-arch="left" tabindex="0" role="region" aria-labelledby="archIntegrityTitle" aria-expanded="true">
+        <article class="arch-door arch-door-navy is-expanded" data-arch="left" tabindex="0" role="region" aria-labelledby="archIntegrityTitle">
           <div class="arch-door-top">
             <div class="arch-icon-badge" aria-hidden="true">
               <!-- Shield Line Icon -->
@@ -443,7 +455,7 @@
         </article>
 
         <!-- RIGHT ARCH DOOR: Collaboration (Pillar 02 • Collective Strength) -->
-        <article class="arch-door arch-door-light is-expanded" data-arch="right" tabindex="0" role="region" aria-labelledby="archCollabTitle" aria-expanded="true">
+        <article class="arch-door arch-door-light is-expanded" data-arch="right" tabindex="0" role="region" aria-labelledby="archCollabTitle">
           <div class="arch-door-top">
             <div class="arch-icon-badge" aria-hidden="true">
               <!-- People Line Icon -->
@@ -637,7 +649,7 @@
   </a>
 
   <!-- JavaScript Bundle (Deferred) -->
-  <script src="js/results-config.js"></script>
+  <script src="js/results-config.js" defer></script>
   <script src="js/translations.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
