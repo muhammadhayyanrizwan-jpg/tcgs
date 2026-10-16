@@ -332,12 +332,13 @@
 
 .founder-caption-name {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2.1vw, 1.95rem); /* 28px - 32px on desktop */
+  font-size: clamp(1.4rem, 2.1vw, 1.95rem); /* 28px - 32px on desktop */
   font-weight: 600; /* Poppins SemiBold */
   color: #FFFFFF;
   line-height: 1.22;
   margin: 0 0 0.25rem 0;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .founder-caption-creds {
@@ -463,6 +464,7 @@
   font-weight: 700;
   color: var(--color-secondary, #0F1F4B);
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 .founder-signature-title {
@@ -539,7 +541,9 @@
     padding: 1.75rem 1.25rem 1.25rem;
   }
   .founder-caption-name {
-    font-size: 1.35rem;
+    font-size: clamp(1rem, 4.4vw, 1.35rem);
+    white-space: nowrap;
+    letter-spacing: -0.015em;
   }
   .founder-caption-creds {
     font-size: 0.88rem;
@@ -2184,46 +2188,9 @@ html[dir="rtl"] .admissions-ribbon {
     display: none; /* Replaced by sticky mobile pill on tablets & mobile */
   }
 
-  /* Mobile Sticky Pill */
+  /* Mobile Sticky Pill removed as requested */
   .deck-mobile-sticky-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    position: sticky;
-    top: 76px;
-    z-index: 60;
-    align-self: center;
-    margin: 0 auto 1.5rem auto;
-    padding: 0.45rem 1.15rem;
-    background: rgba(15, 31, 75, 0.94);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #FFFFFF;
-    border-radius: 100px;
-    border: 1px solid rgba(245, 179, 1, 0.35);
-    box-shadow: 0 6px 20px rgba(15, 31, 75, 0.25);
-  }
-
-  .deck-pill-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 8px var(--color-accent);
-  }
-
-  .deck-pill-kicker {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: #CBD5E1;
-  }
-
-  .deck-pill-counter {
-    font-family: var(--font-heading);
-    font-size: 0.88rem;
-    font-weight: 800;
-    color: var(--color-accent);
+    display: none !important;
   }
 
   /* Mobile Stacked Deck Cards */
@@ -2317,6 +2284,15 @@ html[dir="rtl"] .admissions-ribbon {
     padding-bottom: 3rem;
   }
 
+  .home-hero .section-kicker {
+    white-space: nowrap !important;
+    font-size: clamp(0.68rem, 2.7vw, 0.82rem) !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.32rem 0.65rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .hero-headline {
     font-size: clamp(2rem, 7.5vw, 3rem);
   }
@@ -2342,9 +2318,11 @@ html[dir="rtl"] .admissions-ribbon {
 
   /* Floating Chips Repositioned inside Image Bounds */
   .glass-chip {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-    gap: 0.4rem;
+    padding: 0.38rem 0.75rem;
+    font-size: 0.74rem;
+    gap: 0.35rem;
+    white-space: nowrap;
+    display: inline-flex !important;
   }
 
   .chip-icon {
@@ -2352,10 +2330,10 @@ html[dir="rtl"] .admissions-ribbon {
     height: 22px;
   }
 
-  .chip-1 { top: 6%; left: 4%; }
-  .chip-2 { top: 32%; right: 4%; }
-  .chip-3 { bottom: 24%; left: 4%; }
-  .chip-4 { bottom: 6%; right: 4%; }
+  .chip-1 { top: 5%; left: 3%; }
+  .chip-2 { top: 28%; right: 3%; }
+  .chip-3 { bottom: 22%; left: 3%; display: inline-flex !important; }
+  .chip-4 { bottom: 5%; right: 3%; display: inline-flex !important; }
 
   /* Rotating text badge smaller and inside image bounds */
   .hero-rotating-badge {
@@ -2500,8 +2478,34 @@ html[dir="rtl"] .admissions-ribbon {
     gap: 0.75rem;
   }
 
-  .chip-3, .chip-4 {
-    display: none; /* Hide bottom chips on small screens to keep student picture visible */
+  .glass-chip {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.68rem !important;
+    gap: 0.3rem !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+  }
+
+  .chip-icon {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .chip-1 { top: 4% !important; left: 2% !important; }
+  .chip-2 { top: 27% !important; right: 2% !important; }
+  .chip-3 { bottom: 20% !important; left: 2% !important; display: inline-flex !important; }
+  .chip-4 { bottom: 4% !important; right: 2% !important; display: inline-flex !important; }
+
+  .founder-caption-name {
+    font-size: clamp(0.92rem, 4.4vw, 1.25rem) !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .founder-signature-name {
+    font-size: clamp(0.92rem, 4vw, 1.125rem) !important;
+    white-space: nowrap !important;
   }
 
   .founder-sign-block {
