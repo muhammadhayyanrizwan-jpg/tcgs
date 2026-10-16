@@ -1460,20 +1460,26 @@ html[dir="rtl"] .back-to-top-btn {
 /* Footer Developer Credits */
 .footer-credits {
   color: #CBD5E1;
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  max-width: 100%;
 }
 
 .footer-credits-link {
   color: #FFFFFF;
-  font-size: 0.85rem;
+  font-size: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
   transition: color var(--transition-fast);
 }
 
@@ -1485,6 +1491,7 @@ html[dir="rtl"] .back-to-top-btn {
   color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 0.04em;
+  white-space: nowrap !important;
   transition: color var(--transition-fast);
 }
 
@@ -1496,13 +1503,15 @@ html[dir="rtl"] .back-to-top-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .footer-credits-link .credit-flag {
   display: inline-block;
   vertical-align: middle;
   border-radius: 2px;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 /* Instagram URL Visibility Rule:
