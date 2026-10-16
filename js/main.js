@@ -681,7 +681,6 @@ function initBackToTop() {
   }
 
   window.addEventListener('scroll', toggleBackToTop, { passive: true });
-  toggleBackToTop();
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -788,8 +787,12 @@ function initStackedAdvantageDeck() {
   window.addEventListener('scroll', requestDeckUpdate, { passive: true });
   window.addEventListener('resize', requestDeckUpdate, { passive: true });
 
-  // Initial calculation
-  updateDeckState();
+  // Defer initial layout measurement so it never blocks FCP/LCP/TBT during initial page load
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(updateDeckState);
+  } else {
+    setTimeout(updateDeckState, 350);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1191,10 +1194,27 @@ function initCurrentYear() {
    21. MILAD FUNCTION PICTURE SLIDER (Home Page Continuous Reel)
    -------------------------------------------------------------------------- */
 function initMiladSlider() {
+  const section = document.getElementById('miladFunction');
   const track = document.getElementById('miladSliderTrack');
-  if (!track) return;
-  // Ensure no inline transform interferes with the continuous CSS keyframe animation
+  if (!section || !track) return;
   track.style.transform = '';
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add('is-inview');
+          track.style.animationPlayState = 'running';
+        } else {
+          track.style.animationPlayState = 'paused';
+        }
+      });
+    }, { rootMargin: '150px' });
+    observer.observe(section);
+  } else {
+    section.classList.add('is-inview');
+    track.style.animationPlayState = 'running';
+  }
 }
 
 /* --------------------------------------------------------------------------

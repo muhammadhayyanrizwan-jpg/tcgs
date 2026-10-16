@@ -1688,11 +1688,11 @@ html[dir="rtl"] .arch-outlined-num {
 }
 
 .arch-door-navy .arch-outlined-num {
-  -webkit-text-stroke: 1.75px rgba(245, 179, 1, 0.48);
+  -webkit-text-stroke: 2px #F5B301;
 }
 
 .arch-door-light .arch-outlined-num {
-  -webkit-text-stroke: 1.75px rgba(31, 58, 147, 0.3);
+  -webkit-text-stroke: 2px #1F3A93;
 }
 
 /* Arch Body Copy */
@@ -3022,6 +3022,20 @@ html[dir="rtl"] .admissions-ribbon {
   line-height: 1.7;
 }
 
+/* Optimize heavy offscreen sections for near-zero initial style & layout time */
+.promises-section,
+.commitment-band,
+.milad-slider-section,
+.faculties-section,
+.journey-section,
+.ethical-compass-section,
+.study-tcgs-section,
+.cta-banner-section,
+.visit-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 650px;
+}
+
 /* Continuous Filmstrip / Video-Style Slider Viewport */
 .milad-reel-viewport {
   position: relative;
@@ -3040,11 +3054,12 @@ html[dir="rtl"] .admissions-ribbon {
   display: flex;
   width: max-content;
   animation: milad-reel-scroll 36s linear infinite !important;
-  animation-play-state: running !important;
+  animation-play-state: paused;
   will-change: transform;
   pointer-events: none;
 }
 
+.milad-slider-section.is-inview .milad-reel-track,
 .milad-reel-viewport:hover .milad-reel-track,
 .milad-reel-viewport:active .milad-reel-track,
 .milad-reel-viewport:focus .milad-reel-track {
