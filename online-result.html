@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Result Portal | The City Grammar School Karachi</title>
+  <meta name="description" content="Access official academic examination results online for students of The City Grammar School, Karachi. Enter student roll number, class and exam term.">
+  <meta name="theme-color" content="#1F3A93">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap">
+
+  <!-- Core & Portal Stylesheets -->
+  <link rel="stylesheet" href="css/main.css?v=3.6">
+  <link rel="stylesheet" href="css/results.css?v=1.0">
+</head>
+<body>
+  <!-- Accessible Skip to Content -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================
+       SLIM TOP UTILITY BAR & STICKY HEADER
+       ========================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="slim-top-bar" id="slimTopBar">
+      <div class="container slim-top-container">
+        <div class="slim-top-left">
+          <a href="tel:+922134134343" class="slim-top-link" aria-label="Call school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(021) 34134343</span>
+          </a>
+          <span class="slim-top-divider top-bar-email">|</span>
+          <a href="mailto:info@tcgs.edu.pk" class="slim-top-link top-bar-email" aria-label="Email school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>info@tcgs.edu.pk</span>
+          </a>
+        </div>
+        <div class="slim-top-right">
+          <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer" class="slim-top-social social-icon-instagram" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="container header-main">
+      <a href="index.html" class="brand-logo" aria-label="The City Grammar School Homepage">
+        <img src="logo-transparent.png" alt="The City Grammar School Crest" class="brand-logo-img" width="56" height="56">
+        <div class="logo-text-group">
+          <span class="logo-title" style="font-weight: 400;">The City Grammar School</span>
+          <span class="logo-subtitle" style="font-weight: 400;">Karachi • Primary to Matric</span>
+        </div>
+      </a>
+
+      <!-- Nav Menu with Online Result between Admission & Contact Us -->
+      <nav class="nav-menu" id="primaryNav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="admission.html" class="nav-link">Admission</a>
+        <a href="online-result.html" class="nav-link active">Online Result</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="admission.html" class="btn btn-accent btn-sm">
+          Apply Now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- Breadcrumb -->
+    <div style="background-color: var(--color-white); border-bottom: 1px solid rgba(226, 232, 240, 0.7); padding: 0.85rem 0;">
+      <div class="container" style="font-size: 0.88rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.5rem;">
+        <a href="index.html" style="color: var(--color-primary); text-decoration: none;">Home</a>
+        <span>/</span>
+        <span style="color: var(--color-secondary); font-weight: 600;">Online Result</span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SPLIT SCREEN ONLINE RESULT PORTAL
+         ========================================== -->
+    <section class="result-portal-section" aria-label="Online Examination Result Portal">
+      <div class="container">
+        <div class="portal-split-grid">
+          
+          <!-- LEFT PANEL: Deep Navy with Scanner & Stylized Lettering -->
+          <div class="portal-visual-panel">
+            <div class="portal-watermark" aria-hidden="true">RESULT</div>
+            <div class="portal-scanner-line" aria-hidden="true"></div>
+
+            <div class="portal-badge-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span>Academic Portal</span>
+            </div>
+
+            <div class="portal-visual-content">
+              <h1 class="portal-heading">Online Examination Results</h1>
+              <p class="portal-description">
+                Easily access your academic results by entering your roll number below. Our system provides quick and accurate results for all students.
+              </p>
+
+              <div class="portal-feature-list">
+                <div class="portal-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Verified academic marksheet with subject breakdown</span>
+                </div>
+                <div class="portal-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Instant high-resolution printing & PDF export</span>
+                </div>
+                <div class="portal-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>End-to-end data privacy with no URL exposure</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-visual-footer">
+              The City Grammar School • Hyderabad Colony, Karachi • Est. 1992
+            </div>
+          </div>
+
+          <!-- RIGHT PANEL: Floating Label Form & Interactive Views -->
+          <div class="portal-form-panel">
+            
+            <!-- Result Search Form -->
+            <form id="resultSearchForm" autocomplete="off" novalidate>
+              <h2 class="form-header-title">Student Result Inquiry</h2>
+              <p class="form-header-subtitle">Enter your roll number, class, examination, and academic year details.</p>
+
+              <!-- Honeypot Security Field (hidden from genuine users) -->
+              <input type="text" id="website_hp" name="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+              <!-- Roll Number Floating Group -->
+              <div class="floating-group">
+                <input type="text" id="rollInput" class="floating-input" placeholder=" " required>
+                <label for="rollInput" class="floating-label">Roll Number *</label>
+              </div>
+
+              <!-- Registration Number Floating Group (Optional) -->
+              <div class="floating-group">
+                <input type="text" id="regInput" class="floating-input" placeholder=" ">
+                <label for="regInput" class="floating-label">Registration Number (Optional)</label>
+              </div>
+
+              <!-- Class Manual Input -->
+              <div class="floating-group">
+                <input type="text" id="classInput" class="floating-input" placeholder=" " required>
+                <label for="classInput" class="floating-label">Class (e.g. Class 6) *</label>
+              </div>
+
+              <!-- Exam & Year Grid Row -->
+              <div class="portal-grid-row">
+                <div class="floating-group">
+                  <input type="text" id="examInput" class="floating-input" placeholder=" " required>
+                  <label for="examInput" class="floating-label">Examination (e.g. Exam no 1) *</label>
+                </div>
+                <div class="floating-group">
+                  <input type="text" id="yearInput" class="floating-input" placeholder=" " required>
+                  <label for="yearInput" class="floating-label">Academic Year (e.g. 2025) *</label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-check-result" id="btnSubmitCheck">
+                <span>Check Result</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+
+              <div class="portal-privacy-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Student results are private and securely verified via in-memory lookup.</span>
+              </div>
+            </form>
+
+            <!-- Loading Skeleton State -->
+            <div class="result-skeleton-wrap" id="resultSkeleton" aria-live="polite">
+              <div class="skeleton-box" style="height: 32px; width: 60%; margin-bottom: 0.5rem;"></div>
+              <div class="skeleton-box" style="height: 18px; width: 40%; margin-bottom: 1.5rem;"></div>
+              <div class="skeleton-box" style="height: 70px; width: 100%; margin-bottom: 1rem;"></div>
+              <div class="skeleton-box" style="height: 140px; width: 100%; margin-bottom: 1rem;"></div>
+              <div class="skeleton-box" style="height: 48px; width: 100%;"></div>
+            </div>
+
+            <!-- Friendly Not Found State -->
+            <div class="result-not-found-card" id="resultNotFound">
+              <div class="not-found-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <h3 class="result-not-found-title">No Result Found</h3>
+              <p class="result-not-found-desc">
+                No result record found matching the details entered. Please verify your roll number, class and exam term, or contact the school office for assistance.
+              </p>
+              <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                <button type="button" class="btn-new-search" id="btnTryAgain">Modify Details</button>
+                <a href="contact.html" class="btn-contact-support">
+                  <span>Contact Office</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Printable Marksheet (Unrolls like Paper) -->
+            <div class="result-marksheet-container" id="resultMarksheet">
+              <div class="marksheet-paper">
+                
+                <!-- Marksheet Header -->
+                <div class="marksheet-header">
+                  <div class="marksheet-header-left">
+                    <img src="logo-transparent.png" alt="TCGS Logo" width="56" height="56" style="object-fit: contain;">
+                    <div>
+                      <div class="marksheet-school-name">The City Grammar School</div>
+                      <div class="marksheet-school-sub">Official Academic Examination Marksheet • Karachi, Pakistan</div>
+                    </div>
+                  </div>
+                  <div class="marksheet-badge-group">
+                    <span class="marksheet-status-badge pass" id="msStatusBadge">Status: PASS</span>
+                  </div>
+                </div>
+
+                <!-- Student Bio Grid -->
+                <div class="student-bio-grid">
+                  <div>
+                    <div class="bio-item-label">Student Name</div>
+                    <div class="bio-item-val" id="msStudentName">-</div>
+                  </div>
+                  <div>
+                    <div class="bio-item-label">Roll Number</div>
+                    <div class="bio-item-val" id="msRollNo">-</div>
+                  </div>
+                  <div>
+                    <div class="bio-item-label">Registration No</div>
+                    <div class="bio-item-val" id="msRegNo">-</div>
+                  </div>
+                  <div>
+                    <div class="bio-item-label">Class</div>
+                    <div class="bio-item-val" id="msClass">-</div>
+                  </div>
+                  <div>
+                    <div class="bio-item-label">Examination</div>
+                    <div class="bio-item-val" id="msExam">-</div>
+                  </div>
+                  <div>
+                    <div class="bio-item-label">Academic Year</div>
+                    <div class="bio-item-val" id="msYear">-</div>
+                  </div>
+                </div>
+
+                <!-- Subjects Table -->
+                <div class="marksheet-table-wrap">
+                  <table class="marksheet-table">
+                    <thead>
+                      <tr>
+                        <th>Subject Name</th>
+                        <th class="num-col">Total Marks</th>
+                        <th class="num-col">Obtained Marks</th>
+                        <th class="num-col">Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody id="msSubjectRows">
+                      <!-- Dynamic Rows -->
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>Aggregate Totals</td>
+                        <td class="num-col" id="msTotalMarks">-</td>
+                        <td class="num-col" id="msObtainedMarks">-</td>
+                        <td class="num-col">-</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+
+                <!-- Summary Row -->
+                <div class="marksheet-summary-row">
+                  <div class="marksheet-stat-pill">
+                    <div class="stat-pill-label">Total Percentage</div>
+                    <div class="stat-pill-value" id="msPercentage">-</div>
+                  </div>
+                  <div class="marksheet-stat-pill">
+                    <div class="stat-pill-label">Overall Grade</div>
+                    <div class="stat-pill-value grade-pill" id="msOverallGrade">-</div>
+                  </div>
+                  <div class="marksheet-stat-pill">
+                    <div class="stat-pill-label">Academic Standing</div>
+                    <div class="stat-pill-value" style="font-size: 1.15rem; color: #16A34A;">Promoted</div>
+                  </div>
+                </div>
+
+                <!-- Marksheet Footer Actions -->
+                <div class="marksheet-actions">
+                  <button type="button" class="btn-new-search" id="btnNewSearch">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                    <span>Check Another Result</span>
+                  </button>
+                  <button type="button" class="btn-print" id="btnPrintMarksheet">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    <span>Print / Download PDF</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       SITE FOOTER
+       ========================================== -->
+  <footer class="site-footer" aria-label="Site Footer">
+    <div class="footer-top-divider" aria-hidden="true"></div>
+    <div class="footer-watermark" aria-hidden="true">TCGS</div>
+
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem;" aria-label="The City Grammar School Homepage">
+            <img src="Favicon.png" alt="The City Grammar School Logo" class="brand-logo-img footer-logo-img" width="56" height="56" loading="lazy" decoding="async">
+            <div class="logo-text-group">
+              <span class="logo-title" style="color: #FFFFFF;">The City Grammar School</span>
+              <span class="logo-subtitle" style="color: var(--color-accent);">Karachi • Primary to Matric</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Dedicated to nurturing academic excellence, disciplined character, and modern technological skills in Karachi since 1992.
+          </p>
+          <div class="footer-social-group">
+            <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-icon-instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links (Including Online Result) -->
+        <div class="footer-col">
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admission.html">Admissions</a></li>
+            <li><a href="online-result.html">Online Result</a></li>
+            <li><a href="gallery.html">Campus Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-col">
+          <div class="footer-col-title">School Campus</div>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Plot No: 250-251, Hyderabad Colony, Jail Road, Karachi, Pakistan</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+922134134343" style="color: inherit; text-decoration: none;">(021) 34134343</a>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@tcgs.edu.pk" style="color: inherit; text-decoration: none;">info@tcgs.edu.pk</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar (Policy links) -->
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> The City Grammar School. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span style="opacity: 0.3;">•</span>
+          <a href="terms.html">Terms of Service</a>
+          <span style="opacity: 0.3;">•</span>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/results-config.js"></script>
+  <script src="js/results-data.js"></script>
+  <script src="js/results-portal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

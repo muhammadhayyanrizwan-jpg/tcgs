@@ -26,7 +26,7 @@
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="css/main.css?v=3.1">
-  <link rel="stylesheet" href="css/about.css?v=3.1">
+  <link rel="stylesheet" href="css/about.css?v=3.4">
 </head>
 <body>
 
@@ -59,10 +59,37 @@
        TOP UTILITY BAR & HEADER
        ========================================== -->
   <header class="site-header" id="siteHeader">
+    <div class="slim-top-bar" id="slimTopBar">
+      <div class="container slim-top-container">
+        <div class="slim-top-left">
+          <a href="tel:+922134134343" class="slim-top-link" aria-label="Call school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(021) 34134343</span>
+          </a>
+          <span class="slim-top-divider top-bar-email">|</span>
+          <a href="mailto:info@tcgs.edu.pk" class="slim-top-link top-bar-email" aria-label="Email school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>info@tcgs.edu.pk</span>
+          </a>
+        </div>
+        <div class="slim-top-right">
+          <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer" class="slim-top-social social-icon-instagram" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Main Navigation Bar -->
     <div class="container header-main">
       <a href="index.html" class="brand-logo" aria-label="The City Grammar School Homepage">
-        <img src="FINAL%20LOGO.png" alt="The City Grammar School Logo" class="brand-logo-img" width="56" height="56">
+        <img src="logo-transparent.png" alt="The City Grammar School Logo" class="brand-logo-img" width="56" height="56">
         <div class="logo-text-group">
           <span class="logo-title" style="font-weight: 400;" data-i18n="brand_name">The City Grammar School</span>
           <span class="logo-subtitle" style="font-weight: 400;" data-i18n="brand_tagline">Karachi • Primary to Matric</span>
@@ -73,6 +100,8 @@
         <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
         <a href="about.html" class="nav-link active" data-i18n="nav_about">About Us</a>
         <a href="admission.html" class="nav-link" data-i18n="nav_admission">Admission</a>
+        <a href="online-result.html" class="nav-link">Online Result</a>
+        <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a>
         <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact Us</a>
       </nav>
 
@@ -101,7 +130,7 @@
       </div>
       <h1 data-i18n="about_hero_title">About The City Grammar School</h1>
       <p data-i18n="about_hero_lead">
-        Dedicated to nurturing academic excellence, disciplined leadership, and future-ready innovation on Jail Road, Karachi.
+        Discover Excellence in Education at The City Grammar School
       </p>
     </div>
   </section>
@@ -113,22 +142,22 @@
     <div class="container about-overview-grid">
       <!-- Floating Asymmetric Photo Collage -->
       <div class="collage-container reveal-fade-up">
-        <!-- Photo 1: Science Lab -->
+        <!-- Photo 1: Campus Event & Winners -->
         <div class="collage-photo photo-1">
-          <img src="Fully Equipped Science Labs.jpg"
-               alt="TCGS students performing science laboratory experiment">
+          <img src="gallery/img 23.jpg"
+               alt="TCGS students celebrating achievements on podium">
         </div>
 
-        <!-- Photo 2: Robotics Workshop -->
+        <!-- Photo 2: Sports & Co-Curricular Excellence -->
         <div class="collage-photo photo-2">
-          <img src="Computer & Robotics Lab.jpg"
-               alt="TCGS students collaborating in modern robotics lab">
+          <img src="gallery/img 26.jpg"
+               alt="TCGS martial arts and sports medalists on stage">
         </div>
 
-        <!-- Photo 3: Public Speaking Presentation -->
+        <!-- Photo 3: Campus Morning Assembly -->
         <div class="collage-photo photo-3">
-          <img src="Activity & Declamation Hall.jpg"
-               alt="TCGS student speaking at auditorium podium">
+          <img src="gallery/img 27.jpg"
+               alt="TCGS students gathered during morning campus assembly">
         </div>
 
         <div class="collage-accent-badge">
@@ -153,6 +182,43 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HERITAGE: SINCE 1992 - Parallax Watermark & Serving Karachi Dynamic Count
+       ========================================== -->
+  <section class="since-1992-section" id="since1992Section" aria-label="Established 1992 Heritage">
+    <div class="giant-outlined-year" id="parallaxYear" aria-hidden="true">1992</div>
+    
+    <div class="container since-1992-container reveal-fade-up">
+      <div class="since-1992-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        <span>Established in Karachi • 1992</span>
+      </div>
+
+      <h2 class="since-1992-heading">Over Three Decades of Academic Excellence</h2>
+
+      <!-- Dynamic Count-up Years of Serving Karachi Banner -->
+      <div class="since-count-banner">
+        <span class="since-count-num" id="servingYearsCount">34</span>
+        <span class="since-count-text">Years of Serving Karachi</span>
+      </div>
+
+      <!-- Horizontal "1992 to today" line that draws on scroll -->
+      <div class="since-timeline-wrapper">
+        <div class="since-timeline-track">
+          <div class="since-timeline-fill" id="sinceTimelineFill"></div>
+        </div>
+        <div class="since-timeline-markers">
+          <span>1992 (Founded)</span>
+          <span>Today & Beyond</span>
+        </div>
+      </div>
+
+      <p class="since-1992-body">
+        The City Grammar School in Karachi is dedicated to providing quality education from Primary to Matric level, fostering academic excellence and personal growth since 1992.
+      </p>
     </div>
   </section>
 
@@ -186,36 +252,68 @@
   </section>
 
   <!-- ==========================================
-       4. FOUNDER SPOTLIGHT - Horizontal "ID-Card" Badge Layout
+       4. FOUNDER'S PHILOSOPHY - Grand Editorial Showcase Card
        ========================================== -->
-  <section class="section founder-idcard-section" aria-label="Founder Spotlight">
+  <section class="section founder-showcase-section" id="founderPhilosophy" aria-label="Founder's Philosophy">
     <div class="container">
-      <div class="id-card-wrapper reveal-fade-up">
-        <div class="id-card-lanyard-hole" aria-hidden="true"></div>
+      <div class="founder-grand-card">
+        
+        <!-- Photo Panel (Takes 42% on desktop, edge-to-edge with navy gradient & gold arch) -->
+        <div class="founder-visual-col reveal-founder-photo">
+          <div class="founder-visual-stage">
+            <!-- Soft Gold Arch Shape for Depth Behind Figure -->
+            <div class="founder-gold-arch" aria-hidden="true"></div>
 
-        <!-- Left Column: Photo & Official Credentials -->
-        <div class="id-card-left">
-          <div class="id-photo-frame">
-            <img src="FOUNDER PICTURE.png"
-                 alt="Prof. Syed Urooj-ul-Hassan, Founder of The City Grammar School">
+            <!-- Prominent Large Edge-to-Edge Founder Photo -->
+            <img src="FOUNDER%20PICTURE.png"
+                 alt="Prof. Syed Urooj-ul-Hassan, Founder & Chairman of The City Grammar School"
+                 class="founder-large-img"
+                 width="600"
+                 height="720"
+                 loading="lazy"
+                 decoding="async">
+
+            <!-- Navy Glass Strip Pinned to Bottom -->
+            <div class="founder-glass-caption">
+              <span class="founder-tag-label">Founder & Chairman</span>
+              <h3 class="founder-caption-name" data-i18n="founder_name">Prof. Syed Urooj-ul-Hassan</h3>
+              <p class="founder-caption-creds" data-i18n="founder_creds">MSc, (MBA)</p>
+            </div>
           </div>
-          <div class="id-verified-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified Leadership
-          </div>
-          <div class="id-card-name" data-i18n="founder_name">Prof. Syed Urooj-ul-Hassan</div>
         </div>
 
-        <!-- Right Column: Institutional Mandate & Pull Quote -->
-        <div class="id-card-right">
-          <div class="id-card-quote-label" data-i18n="founder_kicker">Founder's Philosophy</div>
-          <blockquote class="id-card-quote" data-i18n="founder_quote">
+        <!-- Editorial Text Panel (Takes 58% on desktop) -->
+        <div class="founder-text-col reveal-founder-text">
+          <div class="founder-kicker-badge">
+            <span class="founder-kicker-dot"></span>
+            <span class="founder-kicker-text" data-i18n="founder_kicker">Founder's Philosophy</span>
+          </div>
+
+          <!-- Large Decorative Gold-Tinted Outline Quotation Mark -->
+          <div class="founder-deco-quote" aria-hidden="true">“</div>
+
+          <!-- Bold Larger Quote -->
+          <blockquote class="founder-hero-quote" data-i18n="founder_quote">
             “Education's purpose is to replace an empty mind with an open one.”
           </blockquote>
-          <p class="id-card-desc" data-i18n="founder_body">
+
+          <!-- 18-19px Body with Relaxed Line-Height -->
+          <p class="founder-hero-body" data-i18n="founder_body">
             At The City Grammar School, we are dedicated to providing quality education from Primary to Matric, with a strong focus on academic excellence, confidence, and character building. We strive to create a supportive and disciplined environment where every student can learn and grow. Our aim is to help students reach their full potential by encouraging curiosity, responsibility, and a lifelong love for learning, preparing them for a successful future.
           </p>
+
+          <!-- Signature-Style Line -->
+          <div class="founder-signature-row">
+            <div class="founder-seal-disc" aria-hidden="true">
+              <span>UH</span>
+            </div>
+            <div class="founder-signature-info">
+              <div class="founder-signature-name">Prof. Syed Urooj-ul-Hassan</div>
+              <div class="founder-signature-title">MSc, (MBA) • Founder & Chairman, TCGS</div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -266,117 +364,146 @@
   </section>
 
   <!-- ==========================================
-       6. CORE VALUES - 3D Interactive Flip Cards
+       6. CORE VALUES / ETHICAL COMPASS - "Two Arch Doors and a Compass"
        ========================================== -->
-  <section class="section flip-values-section" aria-label="Core Values 3D Flip Cards">
-    <div class="container">
-      <div style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem auto;" class="reveal-fade-up">
-        <div class="section-kicker" data-i18n="values_kicker">Ethical Compass</div>
-        <h2 data-i18n="values_title">Principles That Shape Responsible Leaders</h2>
+  <section class="section ethical-compass-section" id="ethicalCompass" aria-labelledby="ethicalCompassHeading">
+    <!-- Large Soft Gold Arch Outline Behind Content -->
+    <div class="compass-bg-arch" aria-hidden="true"></div>
+
+    <div class="container ethical-compass-container">
+      <!-- Centered Section Header -->
+      <header class="compass-header reveal-fade-up">
+        <div class="compass-label-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          <span data-i18n="values_kicker">Ethical Compass</span>
+        </div>
+        <h2 id="ethicalCompassHeading" class="compass-heading">
+          Principles That Shape <span class="stroke-highlight compass-stroke-underline">Responsible Leaders</span>
+        </h2>
+        <p class="compass-intro" data-i18n="values_lead">
+          We uphold principles that foster a nurturing and effective educational environment, shaping responsible individuals who are ready to contribute to society.
+        </p>
+      </header>
+
+      <!-- Two Arch Doors & Central Interactive Compass Medallion -->
+      <div class="compass-arches-stage" data-compass-stage>
+
+        <!-- LEFT ARCH DOOR: Integrity (Pillar 01 • Moral Courage) -->
+        <article class="arch-door arch-door-navy is-expanded" data-arch="left" tabindex="0" role="region" aria-labelledby="archIntegrityTitle" aria-expanded="true">
+          <div class="arch-door-top">
+            <div class="arch-icon-badge" aria-hidden="true">
+              <!-- Shield Line Icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="arch-pillar-meta">
+              <span class="arch-pillar-tag">Pillar 01</span>
+              <span class="arch-pillar-sub">Moral Courage</span>
+            </div>
+            <span class="arch-outlined-num" aria-hidden="true">01</span>
+          </div>
+
+          <div class="arch-door-body">
+            <h3 id="archIntegrityTitle" class="arch-door-title" data-i18n="val_integrity_title">Integrity</h3>
+            <p class="arch-door-desc" data-i18n="val_integrity_desc">
+              We cultivate honesty and ethical behavior in our students, ensuring they develop a strong moral compass throughout their educational journey.
+            </p>
+          </div>
+
+          <div class="arch-mobile-toggle" aria-hidden="true">
+            <span class="arch-toggle-text">Core Tenets</span>
+            <svg class="arch-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+
+          <ul class="arch-chips-list" aria-label="Integrity core tenets">
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Honesty in Thought &amp; Action</span>
+            </li>
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Personal Accountability</span>
+            </li>
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Truth &amp; Fair Conduct</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- RIGHT ARCH DOOR: Collaboration (Pillar 02 • Collective Strength) -->
+        <article class="arch-door arch-door-light is-expanded" data-arch="right" tabindex="0" role="region" aria-labelledby="archCollabTitle" aria-expanded="true">
+          <div class="arch-door-top">
+            <div class="arch-icon-badge" aria-hidden="true">
+              <!-- People Line Icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="arch-pillar-meta">
+              <span class="arch-pillar-tag">Pillar 02</span>
+              <span class="arch-pillar-sub">Collective Strength</span>
+            </div>
+            <span class="arch-outlined-num" aria-hidden="true">02</span>
+          </div>
+
+          <div class="arch-door-body">
+            <h3 id="archCollabTitle" class="arch-door-title" data-i18n="val_collab_title">Collaboration</h3>
+            <p class="arch-door-desc" data-i18n="val_collab_desc">
+              We believe in teamwork and collaboration, both in the classroom and beyond, creating a sense of belonging and unity among students and staff.
+            </p>
+          </div>
+
+          <div class="arch-mobile-toggle" aria-hidden="true">
+            <span class="arch-toggle-text">Core Tenets</span>
+            <svg class="arch-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+
+          <ul class="arch-chips-list" aria-label="Collaboration core tenets">
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Empathy &amp; Mutual Respect</span>
+            </li>
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Team Problem-Solving</span>
+            </li>
+            <li class="arch-chip-item">
+              <span class="arch-chip-tick" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Unity Across Diversity</span>
+            </li>
+          </ul>
+        </article>
+
       </div>
 
-      <div class="flip-cards-grid">
-        <!-- Flip Card 1: Integrity -->
-        <div class="flip-card-container reveal-fade-up">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" style="margin-bottom: 1rem;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <h3 data-i18n="val_integrity_title">Integrity</h3>
-              <p style="color: var(--color-text-muted); font-size: 0.95rem;">Honesty, accountability, and moral strength in every endeavor.</p>
-              <span class="flip-hint-pill">Hover to Flip ↻</span>
-            </div>
-            <div class="flip-card-back">
-              <h3 data-i18n="val_integrity_title">Integrity</h3>
-              <p data-i18n="val_integrity_desc">
-                We cultivate honesty and ethical behavior in our students, ensuring they develop a strong moral compass throughout their educational journey.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Flip Card 2: Collaboration -->
-        <div class="flip-card-container reveal-fade-up">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#a86e00" stroke-width="2" style="margin-bottom: 1rem;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <h3 data-i18n="val_collab_title">Collaboration</h3>
-              <p style="color: var(--color-text-muted); font-size: 0.95rem;">Teamwork, unity, and mutual respect across our entire community.</p>
-              <span class="flip-hint-pill">Hover to Flip ↻</span>
-            </div>
-            <div class="flip-card-back">
-              <h3 data-i18n="val_collab_title">Collaboration</h3>
-              <p data-i18n="val_collab_desc">
-                We believe in teamwork and collaboration, both in the classroom and beyond, creating a sense of belonging and unity among students and staff.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       7. FACILITIES - Horizontal Drag-Scroll Interactive Gallery
-       ========================================== -->
-  <section class="section facilities-scroll-section" aria-label="Campus Facilities Showcase">
-    <div class="container">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;" class="reveal-fade-up">
-        <div>
-          <div class="section-kicker" data-i18n="facilities_kicker">Campus & Infrastructure</div>
-          <h2 data-i18n="facilities_title">Modern Spaces Built for Active Learning</h2>
-        </div>
-        <div style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600;">
-          ← Scroll horizontally to explore →
-        </div>
-      </div>
-
-      <div class="facilities-scroll-track">
-        <!-- Facility 1: Smart Classrooms -->
-        <div class="facility-card">
-          <div class="facility-img-wrap">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=700&q=80" alt="Well-lit modern classrooms">
-          </div>
-          <div class="facility-card-body">
-            <h3>Modern Classrooms</h3>
-            <p>Ergonomic student seating, well-ventilated naturally lit classrooms, and interactive teaching audio-visual aids.</p>
-          </div>
-        </div>
-
-        <!-- Facility 2: Science Labs -->
-        <div class="facility-card">
-          <div class="facility-img-wrap">
-            <img src="Fully Equipped Science Labs.jpg"
-                 alt="Fully Equipped Science Labs">
-          </div>
-          <div class="facility-card-body">
-            <h3>Fully Equipped Science Labs</h3>
-            <p>Hands-on physics, chemistry, and biology apparatus with strict safety protocols for real scientific discovery.</p>
-          </div>
-        </div>
-
-        <!-- Facility 3: Robotics & Computer Labs -->
-        <div class="facility-card">
-          <div class="facility-img-wrap">
-            <img src="Computer & Robotics Lab.jpg"
-                 alt="Computer & Robotics Lab">
-          </div>
-          <div class="facility-card-body">
-            <h3>Computer & Robotics Lab</h3>
-            <p>Modern workstations, high-speed connectivity, micro-controllers, and coding environments from primary classes up.</p>
-          </div>
-        </div>
-
-        <!-- Facility 4: Activity & Public Speaking Areas -->
-        <div class="facility-card">
-          <div class="facility-img-wrap">
-            <img src="Activity & Declamation Hall.jpg"
-                 alt="Activity & Declamation Hall">
-          </div>
-          <div class="facility-card-body">
-            <h3>Activity & Declamation Hall</h3>
-            <p>Dedicated stage and acoustic setup for student presentations, inter-school debates, celebrations, and character building.</p>
-          </div>
-        </div>
+      <!-- Thin Gold-Bordered Tagline Ribbon -->
+      <div class="compass-tagline-ribbon reveal-fade-up">
+        <span class="compass-ribbon-ornament" aria-hidden="true">✦</span>
+        <p class="compass-tagline-text">
+          “Educating both the mind and the heart to build Karachi's next generation of conscientious leaders.”
+        </p>
+        <span class="compass-ribbon-ornament" aria-hidden="true">✦</span>
       </div>
     </div>
   </section>
@@ -407,12 +534,8 @@
        FOOTER (Shared Navy #0F1F4B, Oversized TCGS Watermark, Gold Wave)
        ========================================== -->
   <footer class="site-footer" aria-label="Site Footer">
-    <div class="footer-top-wave" aria-hidden="true">
-      <svg viewBox="0 0 1200 32" preserveAspectRatio="none">
-        <path d="M0,0 C150,25 350,-10 500,15 C650,35 900,-5 1200,20 L1200,0 L0,0 Z" fill="#F6F8FC"></path>
-        <path d="M0,4 C150,29 350,-6 500,19 C650,39 900,-1 1200,24" stroke="#F5B301" stroke-width="3" fill="none"></path>
-      </svg>
-    </div>
+    <!-- Clean Flat Top Accent Divider -->
+    <div class="footer-top-divider" aria-hidden="true"></div>
 
     <div class="footer-watermark" aria-hidden="true">TCGS</div>
 
@@ -420,21 +543,27 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem;" aria-label="The City Grammar School Homepage">
-            <img src="Favicon.png" alt="The City Grammar School Logo" class="brand-logo-img footer-logo-img" width="48" height="48" loading="lazy" decoding="async">
+            <img src="Favicon.png" alt="The City Grammar School Logo" class="brand-logo-img footer-logo-img" width="56" height="56" loading="lazy" decoding="async">
             <div class="logo-text-group">
               <span class="logo-title" style="color: #FFFFFF;" data-i18n="brand_name">The City Grammar School</span>
               <span class="logo-subtitle" style="color: var(--color-accent);" data-i18n="brand_tagline">Karachi • Primary to Matric</span>
             </div>
           </a>
           <p data-i18n="footer_para">
-            At The City Grammar School, we foster academic excellence and personal growth. Our dedicated teachers are committed to nurturing students' potential for a bright future. Join us in shaping tomorrow's leaders.
+            At The City Grammar School, we foster academic excellence and personal growth. Our dedicated teachers are committed to nurturing students' potential for a bright future. Join us in shaping tomorrow's leaders since 1992.
           </p>
           <div class="footer-social-group">
             <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TCGS on Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="social-btn social-icon-instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
             <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TCGS on LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/923452144982" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TCGS on WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             </a>
           </div>
         </div>
@@ -442,10 +571,12 @@
         <div>
           <h3 class="footer-heading" data-i18n="footer_quick_links">Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="index.html" class="footer-link-btn" data-i18n="nav_home">Home</a></li>
-            <li><a href="about.html" class="footer-link-btn" data-i18n="nav_about">About Us</a></li>
-            <li><a href="admission.html" class="footer-link-btn" data-i18n="nav_admission">Admission</a></li>
-            <li><a href="contact.html" class="footer-link-btn" data-i18n="nav_contact">Contact Us</a></li>
+            <li><a href="index.html" class="footer-link-btn" data-i18n="nav_home"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Home</a></li>
+            <li><a href="about.html" class="footer-link-btn" data-i18n="nav_about"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> About Us</a></li>
+            <li><a href="admission.html" class="footer-link-btn" data-i18n="nav_admission"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Admission</a></li>
+            <li><a href="online-result.html" class="footer-link-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Online Result</a></li>
+            <li><a href="gallery.html" class="footer-link-btn" data-i18n="nav_gallery"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Gallery</a></li>
+            <li><a href="contact.html" class="footer-link-btn" data-i18n="nav_contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Contact Us</a></li>
           </ul>
         </div>
 
@@ -457,7 +588,7 @@
               <span>Plot No: 250-251, Hyderabad Colony, Jail Road, Karachi, Pakistan</span>
             </li>
             <li class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <a href="tel:02134134343" style="color: #CBD5E1;">(021) 34134343</a>
             </li>
             <li class="footer-contact-item">
@@ -480,8 +611,14 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 The City Grammar School. <span data-i18n="footer_rights">All Rights Reserved. The City Grammar School, Karachi.</span></div>
-        <div>Primary to Matric • BSEK Affiliated</div>
+        <div>&copy; <span id="currentYear"></span> The City Grammar School. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span>•</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>•</span>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -500,6 +637,7 @@
   </a>
 
   <!-- JavaScript Bundle (Deferred) -->
+  <script src="js/results-config.js"></script>
   <script src="js/translations.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

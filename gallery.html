@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Campus Life & Event Gallery | The City Grammar School</title>
+  <meta name="description" content="Explore campus activities, annual Milad gatherings, Fruit Day nutrition events, science labs, and celebrations at The City Grammar School Karachi.">
+  <link rel="icon" type="image/png" href="Favicon.png">
+
+  <!-- Performance: Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap">
+
+  <!-- Core and Gallery Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+  <!-- Accessible Skip to Content -->
+  <a href="#mainContent" class="skip-to-content" style="position: absolute; top: -100px; left: 1rem; z-index: 9999; padding: 0.5rem 1rem; background: var(--color-accent); color: var(--color-secondary); font-weight: 700; transition: top 0.2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-100px'">Skip to main content</a>
+
+  <!-- ==========================================
+       TOP UTILITY BAR & STICKY HEADER
+       ========================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="slim-top-bar" id="slimTopBar">
+      <div class="container slim-top-container">
+        <div class="slim-top-left">
+          <a href="tel:+922134134343" class="slim-top-link" aria-label="Call school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(021) 34134343</span>
+          </a>
+          <span class="slim-top-divider top-bar-email">|</span>
+          <a href="mailto:info@tcgs.edu.pk" class="slim-top-link top-bar-email" aria-label="Email school office">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>info@tcgs.edu.pk</span>
+          </a>
+        </div>
+        <div class="slim-top-right">
+          <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer" class="slim-top-social social-icon-instagram" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="slim-top-social" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="container header-main">
+      <a href="index.html" class="brand-logo" aria-label="The City Grammar School Homepage">
+        <img src="logo-transparent.png" alt="The City Grammar School Logo" class="brand-logo-img" width="56" height="56">
+        <div class="logo-text-group">
+          <span class="logo-title" style="font-weight: 400;" data-i18n="brand_name">The City Grammar School</span>
+          <span class="logo-subtitle" style="font-weight: 400;" data-i18n="brand_tagline">Karachi • Primary to Matric</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="primaryNav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">About Us</a>
+        <a href="admission.html" class="nav-link" data-i18n="nav_admission">Admission</a>
+        <a href="online-result.html" class="nav-link">Online Result</a>
+        <a href="gallery.html" class="nav-link active" data-i18n="nav_gallery">Gallery</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="admission.html" class="btn btn-accent btn-sm" data-i18n="btn_apply_now">
+          Apply Now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- ==========================================
+         1. GALLERY HERO
+         ========================================== -->
+    <section class="gallery-hero" aria-label="Campus Gallery Header">
+      <div class="container reveal-fade-up">
+        <div class="gallery-hero-breadcrumb">
+          <a href="index.html" data-i18n="nav_home">Home</a>
+          <span>/</span>
+          <span data-i18n="nav_gallery">Gallery</span>
+        </div>
+        <h1 data-i18n="gallery_hero_title">Campus Life & Event Gallery</h1>
+        <p data-i18n="gallery_hero_lead">
+          A vibrant photographic chronicle of our annual events, STEM activities, student achievements, and celebrations at The City Grammar School.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="gallery-filter-wrap" role="tablist" aria-label="Gallery Categories">
+          <button type="button" class="gallery-filter-btn active" data-filter="all" data-i18n="gallery_filter_all">All Photos (27)</button>
+          <button type="button" class="gallery-filter-btn" data-filter="milad" data-i18n="gallery_filter_milad">Milad & Religious Events</button>
+          <button type="button" class="gallery-filter-btn" data-filter="activities" data-i18n="gallery_filter_activities">Activities & Fruit Day</button>
+          <button type="button" class="gallery-filter-btn" data-filter="celebrations" data-i18n="gallery_filter_celebrations">Annual & National Days</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         2. GALLERY GRID SECTION (All 27 Photos)
+         ========================================== -->
+    <section class="section gallery-section" aria-label="Photo Gallery Grid">
+      <div class="container">
+        <div class="gallery-count-bar">
+          <span>Showing authentic photographs from our Jail Road, Karachi campus</span>
+          <span class="gallery-count-badge" id="galleryCountBadge">27 Photos</span>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          
+          <!-- Photo 01 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="0" data-src="gallery/img 1.jpg" data-title="Jashn-e-Milad un Nabi Gathering">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Milad Gathering</span>
+              <img src="gallery/img 1.jpg" alt="Students presenting naat during Jashn-e-Milad un Nabi" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Jashn-e-Milad un Nabi</h3>
+              <p class="gallery-item-sub">Peace & Blessings Celebration on Campus</p>
+            </div>
+          </article>
+
+          <!-- Photo 02 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="1" data-src="gallery/img 2.jpg" data-title="Islamic Recitation & Naat Competition">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Spiritual Event</span>
+              <img src="gallery/img 2.jpg" alt="Student delivering solemn naat recitation" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Naat & Recitation</h3>
+              <p class="gallery-item-sub">Celebrating moral and spiritual values</p>
+            </div>
+          </article>
+
+          <!-- Photo 03 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="2" data-src="gallery/img 3.jpg" data-title="Spiritual Assembly Presentation">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Milad Gathering</span>
+              <img src="gallery/img 3.jpg" alt="Group of students participating in recitation" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Spiritual Assembly</h3>
+              <p class="gallery-item-sub">Fostering reverence and communal brotherhood</p>
+            </div>
+          </article>
+
+          <!-- Photo 04 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="3" data-src="gallery/img 4.jpg" data-title="Milad Assembly & Commemoration">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Campus Event</span>
+              <img src="gallery/img 4.jpg" alt="Campus stage prepared for annual celebration" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Milad Stage Assembly</h3>
+              <p class="gallery-item-sub">Traditional celebrations at TCGS</p>
+            </div>
+          </article>
+
+          <!-- Photo 05 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="4" data-src="gallery/img 5.jpg" data-title="Special Student Performance">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Talent Showcase</span>
+              <img src="gallery/img 5.jpg" alt="Student giving presentation at TCGS podium" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Student Performance</h3>
+              <p class="gallery-item-sub">Public speech and declamation practice</p>
+            </div>
+          </article>
+
+          <!-- Photo 06 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="5" data-src="gallery/img 6.jpg" data-title="Leadership & Moral Discipline">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Leadership</span>
+              <img src="gallery/img 6.jpg" alt="Senior student in traditional formal presentation" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Character & Discipline</h3>
+              <p class="gallery-item-sub">Instilling pride and values in future graduates</p>
+            </div>
+          </article>
+
+          <!-- Photo 07 -->
+          <article class="gallery-item reveal-fade-up" data-category="milad" data-index="6" data-src="gallery/img 7.jpg" data-title="Annual School Gathering">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Community</span>
+              <img src="gallery/img 7.jpg" alt="TCGS community gathering at school" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Community Assembly</h3>
+              <p class="gallery-item-sub">Teachers, students, and administration in unity</p>
+            </div>
+          </article>
+
+          <!-- Photo 08 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="7" data-src="gallery/img 8.jpg" data-title="Primary Activities & Play-based Learning">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Primary School</span>
+              <img src="gallery/img 8.jpg" alt="Primary students engaged in school activity" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Primary School Activities</h3>
+              <p class="gallery-item-sub">Hands-on interactive learning for younger classes</p>
+            </div>
+          </article>
+
+          <!-- Photo 09 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="8" data-src="gallery/img 9.jpg" data-title="Montessori & Early Discovery">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Montessori</span>
+              <img src="gallery/img 9.jpg" alt="Montessori kids exploring creative classroom activities" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Montessori Discovery</h3>
+              <p class="gallery-item-sub">Joyful exploration and foundational confidence</p>
+            </div>
+          </article>
+
+          <!-- Photo 10 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="9" data-src="gallery/img 10.jpg" data-title="Fruit Day Activity (Healthy Fruits, Healthy Future)">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Fruit Day Activity</span>
+              <img src="gallery/img 10.jpg" alt="Students with colorful fruit displays during Fruit Day" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Fruit Day Activity</h3>
+              <p class="gallery-item-sub">Healthy Fruits, Healthy Future campaign</p>
+            </div>
+          </article>
+
+          <!-- Photo 11 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="10" data-src="gallery/img 11.jpg" data-title="Wellness & Practical Food Exploration">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Health & Nutrition</span>
+              <img src="gallery/img 11.jpg" alt="Children learning nutrition and fresh produce" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Nutrition & Wellness Day</h3>
+              <p class="gallery-item-sub">Empowering kids with healthy habits early</p>
+            </div>
+          </article>
+
+          <!-- Photo 12 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="11" data-src="gallery/img 12.jpg" data-title="Primary Joyful Discovery Event">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Classroom Fun</span>
+              <img src="gallery/img 12.jpg" alt="Young students participating in classroom celebration" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Joyful Discovery Day</h3>
+              <p class="gallery-item-sub">Creating positive memories in the classroom</p>
+            </div>
+          </article>
+
+          <!-- Photo 13 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="12" data-src="gallery/img 13.jpg" data-title="Little Explorers Creative Corner">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Creative Corner</span>
+              <img src="gallery/img 13.jpg" alt="Art and craft activities for primary learners" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Creative Art Corner</h3>
+              <p class="gallery-item-sub">Unlocking early artistic expression</p>
+            </div>
+          </article>
+
+          <!-- Photo 14 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="13" data-src="gallery/img 14.jpg" data-title="Classroom Presentations & Fun Day">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Class Presentations</span>
+              <img src="gallery/img 14.jpg" alt="Young student presenting in front of classmates" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Classroom Showcase</h3>
+              <p class="gallery-item-sub">Building communication skills early</p>
+            </div>
+          </article>
+
+          <!-- Photo 15 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="14" data-src="gallery/img 15.jpg" data-title="Character Building & Moral Education">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Values & Character</span>
+              <img src="gallery/img 15.jpg" alt="Students in disciplined school activities" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Character & Manners</h3>
+              <p class="gallery-item-sub">Nurturing responsible citizens for tomorrow</p>
+            </div>
+          </article>
+
+          <!-- Photo 16 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="15" data-src="gallery/img 16.jpg" data-title="TCGS School Community Assembly">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">School Assembly</span>
+              <img src="gallery/img 16.jpg" alt="Morning assembly lines and prayer ceremony" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Morning Assembly</h3>
+              <p class="gallery-item-sub">Daily discipline and national anthem</p>
+            </div>
+          </article>
+
+          <!-- Photo 17 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="16" data-src="gallery/img 17.jpg" data-title="Sports, Physical Agility & Team Spirit">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Sports & Fitness</span>
+              <img src="gallery/img 17.jpg" alt="Students engaged in outdoor games and sports" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Sports & Athletics</h3>
+              <p class="gallery-item-sub">Physical fitness and sportsmanship</p>
+            </div>
+          </article>
+
+          <!-- Photo 18 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="17" data-src="gallery/img 18.jpg" data-title="Annual Prize Distribution Ceremony">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Annual Awards</span>
+              <img src="gallery/img 18.jpg" alt="Students receiving trophies and certificates on stage" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Annual Prize Day</h3>
+              <p class="gallery-item-sub">Recognizing dedication and excellence</p>
+            </div>
+          </article>
+
+          <!-- Photo 19 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="18" data-src="gallery/img 19.jpg" data-title="Student Honors & Academic Excellence">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Academic Honors</span>
+              <img src="gallery/img 19.jpg" alt="Matric high achievers receiving commendation" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Board High Achievers</h3>
+              <p class="gallery-item-sub">Consistent A-One grade performances</p>
+            </div>
+          </article>
+
+          <!-- Photo 20 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="19" data-src="gallery/img 20.jpg" data-title="Independence Day Celebration (14th August)">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Independence Day</span>
+              <img src="gallery/img 20.jpg" alt="Green and white decorations for 14th August celebration" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Independence Day Event</h3>
+              <p class="gallery-item-sub">Honoring Pakistani heritage and unity</p>
+            </div>
+          </article>
+
+          <!-- Photo 21 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="20" data-src="gallery/img 21.jpg" data-title="National Day Performances & Tableaus">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Cultural Tableau</span>
+              <img src="gallery/img 21.jpg" alt="Students in cultural costume performing drama" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">National Tableaus</h3>
+              <p class="gallery-item-sub">Creative storytelling and stage expression</p>
+            </div>
+          </article>
+
+          <!-- Photo 22 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="21" data-src="gallery/img 22.jpg" data-title="Science & Innovation Project Showcase">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Science Exhibition</span>
+              <img src="gallery/img 22.jpg" alt="Science models and lab demonstrations" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Science Project Fair</h3>
+              <p class="gallery-item-sub">Applied STEM research and smart prototypes</p>
+            </div>
+          </article>
+
+          <!-- Photo 23 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="22" data-src="gallery/img 23.jpg" data-title="Robotics & Technology Exploration">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Robotics Lab</span>
+              <img src="gallery/img 23.jpg" alt="Students building electronic robotics projects" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Robotics & AI Lab</h3>
+              <p class="gallery-item-sub">Future-ready technical problem solving</p>
+            </div>
+          </article>
+
+          <!-- Photo 24 -->
+          <article class="gallery-item reveal-fade-up" data-category="activities" data-index="23" data-src="gallery/img 24.jpg" data-title="Art, Calligraphy & Design Exhibition">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Fine Arts</span>
+              <img src="gallery/img 24.jpg" alt="Display of colorful paintings and artwork" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Art & Calligraphy</h3>
+              <p class="gallery-item-sub">Nurturing creative visual talents</p>
+            </div>
+          </article>
+
+          <!-- Photo 25 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="24" data-src="gallery/img 25.jpg" data-title="Inter-School Competitions & Trophies">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Trophies & Honors</span>
+              <img src="gallery/img 25.jpg" alt="Winning students with competition trophies" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Competitive Victories</h3>
+              <p class="gallery-item-sub">Proud representation across Karachi</p>
+            </div>
+          </article>
+
+          <!-- Photo 26 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="25" data-src="gallery/img 26.jpg" data-title="Teacher-Student Mentorship Day">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Mentorship</span>
+              <img src="gallery/img 26.jpg" alt="Teacher interacting positively with students" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Faculty Mentorship</h3>
+              <p class="gallery-item-sub">Personalized guidance for every pupil</p>
+            </div>
+          </article>
+
+          <!-- Photo 27 -->
+          <article class="gallery-item reveal-fade-up" data-category="celebrations" data-index="26" data-src="gallery/img 27.jpg" data-title="Graduation, Farewell & Matric Batch Memories">
+            <div class="gallery-item-media">
+              <span class="gallery-tag-pill">Graduation Batch</span>
+              <img src="gallery/img 27.jpg" alt="Matric graduating batch group photograph" class="gallery-item-img" loading="lazy" width="600" height="450">
+              <div class="gallery-item-overlay">
+                <div class="gallery-zoom-circle" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item-body">
+              <h3 class="gallery-item-title">Matric Farewell & Batch</h3>
+              <p class="gallery-item-sub">Stepping confidently into college education</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. ADMISSIONS CALL TO ACTION BANNER
+         ========================================== -->
+    <section class="section cta-banner-section" aria-label="Admissions Call to Action">
+      <div class="container">
+        <div class="cta-banner-card reveal-fade-up">
+          <div class="admissions-ribbon" data-i18n="admissions_ribbon">Admissions Open</div>
+          <div class="cta-banner-content">
+            <h2 data-i18n="cta_banner_title">Admissions Are Now Open for Primary to Matric</h2>
+            <p data-i18n="cta_banner_desc">
+              Invest in your child's future with Karachi's forward-looking academic institution. Schedule a visit or speak directly to our admissions office today.
+            </p>
+            <div class="cta-banner-actions">
+              <a href="admission.html" class="btn btn-accent btn-lg" data-i18n="btn_apply_now">
+                Apply for Admission
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://wa.me/923452144982" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg" data-i18n="btn_chat_whatsapp">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       FULLSCREEN LIGHTBOX MODAL
+       ========================================== -->
+  <div class="gallery-lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Preview Lightbox">
+    <button type="button" class="lightbox-btn lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button type="button" class="lightbox-btn lightbox-prev-btn" id="lightboxPrevBtn" aria-label="Previous Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button type="button" class="lightbox-btn lightbox-next-btn" id="lightboxNextBtn" aria-label="Next Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    
+    <div class="lightbox-content-box">
+      <div class="lightbox-img-frame">
+        <img src="" alt="" id="lightboxImg">
+      </div>
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER (Navy #0F1F4B, Flat Gold Accent Divider, Generous Safe Area)
+       ========================================== -->
+  <footer class="site-footer" aria-label="Site Footer">
+    <!-- Clean Flat Top Accent Divider -->
+    <div class="footer-top-divider" aria-hidden="true"></div>
+
+    <!-- Oversized TCGS Background Watermark -->
+    <div class="footer-watermark" aria-hidden="true">TCGS</div>
+
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem;" aria-label="The City Grammar School Homepage">
+            <img src="Favicon.png" alt="The City Grammar School Logo" class="brand-logo-img footer-logo-img" width="56" height="56" loading="lazy" decoding="async">
+            <div class="logo-text-group">
+              <span class="logo-title" style="color: #FFFFFF;" data-i18n="brand_name">The City Grammar School</span>
+              <span class="logo-subtitle" style="color: var(--color-accent);" data-i18n="brand_tagline">Karachi • Primary to Matric</span>
+            </div>
+          </a>
+          <p data-i18n="footer_para">
+            At The City Grammar School, we foster academic excellence and personal growth. Our dedicated teachers are committed to nurturing students' potential for a bright future. Join us in shaping tomorrow's leaders since 1992.
+          </p>
+          <div class="footer-social-group">
+            <a href="https://www.facebook.com/thecitygrammarschool/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TCGS on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="social-btn social-icon-instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/the-city-grammer-school/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/923452144982" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TCGS on WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links (With Online Result) -->
+        <div class="footer-nav-col">
+          <h3 class="footer-heading" data-i18n="footer_quick_links">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link-btn" data-i18n="nav_home"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Home</a></li>
+            <li><a href="about.html" class="footer-link-btn" data-i18n="nav_about"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> About Us</a></li>
+            <li><a href="admission.html" class="footer-link-btn" data-i18n="nav_admission"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Admission</a></li>
+            <li><a href="online-result.html" class="footer-link-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Online Result</a></li>
+            <li><a href="gallery.html" class="footer-link-btn" data-i18n="nav_gallery"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Gallery</a></li>
+            <li><a href="contact.html" class="footer-link-btn" data-i18n="nav_contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-contact-col">
+          <h3 class="footer-heading" data-i18n="footer_contact_info">Contact Info</h3>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Plot No: 250-251, Hyderabad Colony, Jail Road, Karachi, Pakistan</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <a href="tel:02134134343" style="display:block; color:inherit;">(021) 34134343</a>
+                <a href="tel:02134910679" style="display:block; color:inherit;">(021) 34910679</a>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@tcgs.edu.pk" style="color:inherit;">info@tcgs.edu.pk</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Timings & Legal -->
+        <div class="footer-hours-col">
+          <h3 class="footer-heading" data-i18n="live_badge_label">Office Hours</h3>
+          <p style="color: #CBD5E1; font-size: 0.9rem; line-height: 1.6;" data-i18n="timing_desc">
+            Monday – Friday: 07:00 AM – 01:00 PM
+          </p>
+          <div class="live-status-pill is-open" style="margin-top: 1rem;">
+            <span class="status-dot"></span>
+            <span class="status-text" data-i18n="status_open">Open Now • Closes 1:00 PM PKT</span>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="https://wa.me/923452144982" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm" style="width: 100%; justify-content: center;" data-i18n="btn_chat_whatsapp">
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Disclaimer / Policy Links -->
+      <div class="footer-bottom">
+        <div data-i18n="footer_rights">© 2026 The City Grammar School. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span>•</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>•</span>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING ACTION BUTTONS
+       ========================================== -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <a href="https://wa.me/923452144982" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with TCGS Admissions on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </div>
+    <span data-i18n="btn_chat_whatsapp">Chat on WhatsApp</span>
+  </a>
+
+  <!-- JavaScript Bundle -->
+  <script src="js/results-config.js"></script>
+  <script src="js/translations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

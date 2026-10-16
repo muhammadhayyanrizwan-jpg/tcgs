@@ -38,6 +38,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 11. Back to Top Button
   initBackToTop();
+
+  // 12. Scroll-Driven Stacked Cards Deck (TCGS Advantage Section)
+  initStackedAdvantageDeck();
+
+  // 13. Interactive Gallery Filters & Lightbox Modal
+  initGalleryFilters();
+  initGalleryLightbox();
+
+  // 14. Three Promises Auto-Advancing Tabs & Accordion (Home Page)
+  initPromisesSection();
+
+  // 15. Study at TCGS Expanding Image Panels (Home Page)
+  initStudyTcgsSection();
+
+  // 16. Result Quick-Check Band (Home Page)
+  initQuickResultCheck();
+
+  // 17. Since 1992 Parallax, Timeline & Year Count (About Page)
+  initSince1992Section();
+
+  // 18. Newsletter Subscription Strip with Honeypot
+  initNewsletterForm();
+
+  // 19. Instagram Dynamic Social Link Visibility
+  initInstagramSocialLinks();
+
+  // 20. Dynamic Copyright Year
+  initCurrentYear();
+
+  // 21. Milad Function Picture Slider (Home Page)
+  initMiladSlider();
+
+  // 22. Ethical Compass Two Arch Doors & Swinging Compass Medallion
+  initEthicalCompassSection();
 });
 
 /* --------------------------------------------------------------------------
@@ -207,14 +241,14 @@ function updateKarachiOfficeStatus() {
    4. SCROLL REVEAL (INTERSECTION OBSERVER)
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal-fade-up');
+  const revealElements = document.querySelectorAll('.reveal-fade-up, .reveal-founder-photo, .reveal-founder-text');
   if (!revealElements.length) return;
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+          entry.target.classList.add('is-visible', 'is-revealed');
           observer.unobserve(entry.target);
         }
       });
@@ -225,7 +259,9 @@ function initScrollReveal() {
 
     revealElements.forEach(el => observer.observe(el));
   } else {
-    revealElements.forEach(el => el.classList.add('is-visible'));
+    revealElements.forEach(el => {
+      el.classList.add('is-visible', 'is-revealed');
+    });
   }
 }
 
@@ -655,4 +691,647 @@ function initBackToTop() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   12. SCROLL-DRIVEN STACKED CARDS DECK (TCGS Advantage Section)
+   Smoothly tracks active card, updates counter (01 / 06), progress line,
+   mobile sticky pill, and manages .is-active and .is-behind deck states.
+   -------------------------------------------------------------------------- */
+function initStackedAdvantageDeck() {
+  const section = document.getElementById('whyChooseUs');
+  if (!section) return;
+
+  const cards = Array.from(section.querySelectorAll('.stack-card'));
+  if (!cards.length) return;
+
+  const counterEl = document.getElementById('deckCounter');
+  const fillEl = document.getElementById('deckProgressFill');
+  const mobileCounterEl = document.getElementById('deckMobileCounter');
+  const scrollHint = document.getElementById('deckScrollHint');
+
+  let ticking = false;
+
+  function updateDeckState() {
+    const isMobile = window.innerWidth <= 1024;
+    // Base sticky threshold offset from top of viewport
+    const baseOffset = isMobile ? 85 : 125;
+
+    let activeIdx = 0;
+
+    // Check which card has scrolled into its sticky stacking position
+    cards.forEach((card, idx) => {
+      const rect = card.getBoundingClientRect();
+      const stickyThreshold = baseOffset + (idx * (isMobile ? 10 : 16)) + 25;
+      if (rect.top <= stickyThreshold) {
+        activeIdx = idx;
+      }
+    });
+
+    // Update active and behind card classes
+    cards.forEach((card, idx) => {
+      if (idx === activeIdx) {
+        card.classList.add('is-active');
+        card.classList.remove('is-behind');
+      } else if (idx < activeIdx) {
+        card.classList.remove('is-active');
+        card.classList.add('is-behind');
+      } else {
+        card.classList.remove('is-active');
+        card.classList.remove('is-behind');
+      }
+    });
+
+    // Format 2-digit numbers
+    const currentNumStr = String(activeIdx + 1).padStart(2, '0');
+    const totalNumStr = String(cards.length).padStart(2, '0');
+
+    // 1. Update Desktop Counter
+    if (counterEl) {
+      counterEl.innerHTML = `${currentNumStr} <span class="deck-counter-total">/ ${totalNumStr}</span>`;
+      const container = counterEl.closest('[aria-label]');
+      if (container) {
+        container.setAttribute('aria-label', `Advantage points progress: ${activeIdx + 1} of ${cards.length}`);
+      }
+    }
+
+    // 2. Update Desktop Progress Line fill width
+    if (fillEl) {
+      const percent = ((activeIdx + 1) / cards.length) * 100;
+      fillEl.style.width = `${percent}%`;
+    }
+
+    // 3. Update Mobile Sticky Pill counter
+    if (mobileCounterEl) {
+      mobileCounterEl.textContent = `${currentNumStr} / ${totalNumStr}`;
+    }
+
+    // 4. Fade out scroll hint once user starts scrolling into cards
+    if (scrollHint) {
+      const sectionRect = section.getBoundingClientRect();
+      if (activeIdx > 0 || sectionRect.top < -50) {
+        scrollHint.classList.add('is-hidden');
+      } else {
+        scrollHint.classList.remove('is-hidden');
+      }
+    }
+
+    ticking = false;
+  }
+
+  function requestDeckUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateDeckState);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestDeckUpdate, { passive: true });
+  window.addEventListener('resize', requestDeckUpdate, { passive: true });
+
+  // Initial calculation
+  updateDeckState();
+}
+
+/* --------------------------------------------------------------------------
+   13. INTERACTIVE GALLERY FILTERS & LIGHTBOX MODAL
+   Smooth category filtering, count updates, full-screen lightbox preview,
+   touch navigation, and keyboard shortcuts (ESC, Left, Right).
+   -------------------------------------------------------------------------- */
+function initGalleryFilters() {
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+  const badge = document.getElementById('galleryCountBadge');
+  if (!filterBtns.length || !items.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          item.style.display = 'flex';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (badge) {
+        badge.textContent = `${visibleCount} Photo${visibleCount === 1 ? '' : 's'}`;
+      }
+    });
+  });
+}
+
+function initGalleryLightbox() {
+  const modal = document.getElementById('galleryLightbox');
+  if (!modal) return;
+
+  const imgEl = document.getElementById('lightboxImg');
+  const titleEl = document.getElementById('lightboxTitle');
+  const counterEl = document.getElementById('lightboxCounter');
+  const closeBtn = document.getElementById('lightboxCloseBtn');
+  const prevBtn = document.getElementById('lightboxPrevBtn');
+  const nextBtn = document.getElementById('lightboxNextBtn');
+
+  const allItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let activeItems = [];
+  let currentIndex = 0;
+
+  function updateActiveItems() {
+    activeItems = allItems.filter(item => item.style.display !== 'none');
+  }
+
+  function showPhoto(index) {
+    updateActiveItems();
+    if (!activeItems.length) return;
+
+    if (index < 0) index = activeItems.length - 1;
+    if (index >= activeItems.length) index = 0;
+
+    currentIndex = index;
+    const target = activeItems[currentIndex];
+    const src = target.getAttribute('data-src') || target.querySelector('img')?.src;
+    const title = target.getAttribute('data-title') || '';
+    if (imgEl) {
+      imgEl.src = src;
+      imgEl.alt = title;
+    }
+    if (titleEl) {
+      titleEl.textContent = title;
+    }
+    if (counterEl) {
+      counterEl.textContent = `Photo ${currentIndex + 1} of ${activeItems.length}`;
+    }
+  }
+
+  function openLightbox(index) {
+    updateActiveItems();
+    showPhoto(index);
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  allItems.forEach(item => {
+    item.addEventListener('click', () => {
+      updateActiveItems();
+      const visibleIdx = activeItems.indexOf(item);
+      if (visibleIdx !== -1) {
+        openLightbox(visibleIdx);
+      }
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => showPhoto(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showPhoto(currentIndex + 1));
+
+  // Close on outside backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLightbox();
+  });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+    if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+  });
+}
+
+/* --------------------------------------------------------------------------
+   14. THREE PROMISES - Auto-Advancing Tabs & Visual Panel
+   -------------------------------------------------------------------------- */
+function initPromisesSection() {
+  const section = document.getElementById('promisesSection');
+  if (!section) return;
+
+  const tabBtns = section.querySelectorAll('.promise-tab-btn');
+  const panels = section.querySelectorAll('.promise-panel-item');
+  const progressBar = document.getElementById('promiseProgressBar');
+  if (!tabBtns.length || !panels.length) return;
+
+  let currentIdx = 0;
+  let progressTimer = null;
+  const duration = 6000;
+  let startTime = Date.now();
+  let isPaused = false;
+
+  function switchPromise(index) {
+    currentIdx = index;
+    tabBtns.forEach((btn, idx) => {
+      const active = (idx === index);
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    panels.forEach((p, idx) => {
+      if (idx === index) {
+        p.style.display = 'block';
+        p.classList.add('is-active');
+      } else {
+        p.style.display = 'none';
+        p.classList.remove('is-active');
+      }
+    });
+
+    resetProgress();
+  }
+
+  function resetProgress() {
+    startTime = Date.now();
+    if (progressBar) progressBar.style.width = '0%';
+  }
+
+  function tick() {
+    if (!isPaused) {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min((elapsed / duration) * 100, 100);
+      if (progressBar) progressBar.style.width = `${pct}%`;
+
+      if (elapsed >= duration) {
+        currentIdx = (currentIdx + 1) % tabBtns.length;
+        switchPromise(currentIdx);
+      }
+    }
+  }
+
+  function startTimer() {
+    stopTimer();
+    startTime = Date.now();
+    progressTimer = setInterval(tick, 50);
+  }
+
+  function stopTimer() {
+    if (progressTimer) clearInterval(progressTimer);
+  }
+
+  tabBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      switchPromise(idx);
+      startTimer();
+    });
+  });
+
+  // Pause on hover or touch
+  section.addEventListener('mouseenter', () => { isPaused = true; });
+  section.addEventListener('mouseleave', () => { isPaused = false; startTime = Date.now(); });
+  section.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+  section.addEventListener('touchend', () => { isPaused = false; startTime = Date.now(); }, { passive: true });
+
+  switchPromise(0);
+  startTimer();
+}
+
+/* --------------------------------------------------------------------------
+   15. STUDY AT TCGS - Equal Fixed Cards (No Resize)
+   -------------------------------------------------------------------------- */
+function initStudyTcgsSection() {
+  const cards = document.querySelectorAll('.study-panel-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const link = card.querySelector('.study-panel-link');
+      if (link && !e.target.closest('a')) {
+        link.click();
+      }
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   16. RESULT QUICK-CHECK BAND - In-Memory / SessionStorage Handshake
+   -------------------------------------------------------------------------- */
+function initQuickResultCheck() {
+  const form = document.getElementById('quickResultForm');
+  const classSelect = document.getElementById('quickClass');
+  const yearSelect = document.getElementById('quickYear');
+  if (!form) return;
+
+  if (typeof CLASSES !== 'undefined' && classSelect && CLASSES.length > 0) {
+    classSelect.innerHTML = '<option value="" disabled selected>Select Class</option>';
+    CLASSES.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c;
+      opt.textContent = c;
+      classSelect.appendChild(opt);
+    });
+  }
+
+  if (typeof YEARS !== 'undefined' && yearSelect && YEARS.length > 0) {
+    yearSelect.innerHTML = '<option value="" disabled selected>Select Year</option>';
+    YEARS.forEach(y => {
+      const opt = document.createElement('option');
+      opt.value = y;
+      opt.textContent = y;
+      yearSelect.appendChild(opt);
+    });
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const roll = document.getElementById('quickRoll')?.value.trim() || '';
+    const classVal = classSelect?.value || '';
+    const yearVal = yearSelect?.value || '';
+
+    if (!roll || !classVal || !yearVal) {
+      alert('Please fill in Roll No, Class, and Year.');
+      return;
+    }
+
+    try {
+      sessionStorage.setItem('tcgs_quick_check', JSON.stringify({
+        roll: roll,
+        classVal: classVal,
+        yearVal: yearVal
+      }));
+    } catch (err) {
+      console.error('Session storage error:', err);
+    }
+
+    window.location.href = 'online-result.html';
+  });
+}
+
+/* --------------------------------------------------------------------------
+   17. SINCE 1992 - Scroll-Drawn Timeline & Parallax
+   -------------------------------------------------------------------------- */
+function initSince1992Section() {
+  const countEl = document.getElementById('servingYearsCount');
+  const fillEl = document.getElementById('sinceTimelineFill');
+  const outlineNum = document.querySelector('.since-outline-num');
+
+  const startYear = typeof ESTABLISHED_YEAR !== 'undefined' ? ESTABLISHED_YEAR : 1992;
+  const currentYr = new Date().getFullYear();
+  const totalYears = Math.max(currentYr - startYear, 32);
+
+  if (countEl) {
+    countEl.textContent = totalYears;
+
+    let animated = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          if (fillEl) fillEl.classList.add('drawn');
+
+          let cur = 0;
+          const step = Math.max(1, Math.floor(totalYears / 30));
+          const interval = setInterval(() => {
+            cur += step;
+            if (cur >= totalYears) {
+              cur = totalYears;
+              clearInterval(interval);
+            }
+            countEl.textContent = cur;
+          }, 35);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    observer.observe(countEl.closest('.since-1992-section') || countEl);
+  }
+
+  if (outlineNum) {
+    window.addEventListener('scroll', () => {
+      const rect = outlineNum.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const offset = (window.innerHeight - rect.top) * 0.08;
+        outlineNum.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
+      }
+    }, { passive: true });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. NEWSLETTER SUBSCRIPTION STRIP - Anti-Spam Honeypot & UX
+   -------------------------------------------------------------------------- */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletterForm');
+  const feedback = document.getElementById('newsletterFeedback');
+  const emailInput = document.getElementById('newsletterEmail');
+  const submitBtn = document.getElementById('btnNewsletterSubmit');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Honeypot check
+    const hp = form.querySelector('input[name="news_hp"]')?.value;
+    if (hp) {
+      form.reset();
+      return;
+    }
+
+    const email = emailInput?.value.trim() || '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      if (feedback) {
+        feedback.className = 'newsletter-feedback-msg is-error';
+        feedback.textContent = 'Please enter a valid email address.';
+      }
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribed ✓';
+    }
+    if (feedback) {
+      feedback.className = 'newsletter-feedback-msg is-success';
+      feedback.textContent = 'Thank you for subscribing to school announcements!';
+    }
+    form.reset();
+  });
+}
+
+/* --------------------------------------------------------------------------
+   19. INSTAGRAM LINK VISIBILITY - Config Driven
+   -------------------------------------------------------------------------- */
+function initInstagramSocialLinks() {
+  const isUrlSet = typeof INSTAGRAM_URL !== 'undefined' && INSTAGRAM_URL && INSTAGRAM_URL.trim() !== '';
+  const instaLinks = document.querySelectorAll('.social-icon-instagram');
+
+  instaLinks.forEach(link => {
+    if (!isUrlSet) {
+      link.style.display = 'none';
+    } else {
+      link.style.display = '';
+      link.setAttribute('href', INSTAGRAM_URL);
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   20. DYNAMIC COPYRIGHT YEAR
+   -------------------------------------------------------------------------- */
+function initCurrentYear() {
+  const yearEls = document.querySelectorAll('#currentYear');
+  const cur = new Date().getFullYear();
+  yearEls.forEach(el => {
+    el.textContent = cur;
+  });
+}
+
+/* --------------------------------------------------------------------------
+   21. MILAD FUNCTION PICTURE SLIDER (Home Page Continuous Reel)
+   -------------------------------------------------------------------------- */
+function initMiladSlider() {
+  const track = document.getElementById('miladSliderTrack');
+  if (!track) return;
+  // Ensure no inline transform interferes with the continuous CSS keyframe animation
+  track.style.transform = '';
+}
+
+/* --------------------------------------------------------------------------
+   22. ETHICAL COMPASS - "Two Arch Doors and a Compass"
+   Handles: Staggered arch entry, spring needle settle, hover/focus/tap needle
+   rotation toward active arch, sibling dimming, and mobile tap-to-expand chips.
+   -------------------------------------------------------------------------- */
+function initEthicalCompassSection() {
+  const stages = document.querySelectorAll('[data-compass-stage]');
+  if (!stages.length) return;
+
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  stages.forEach(stage => {
+    const leftArch = stage.querySelector('[data-arch="left"]');
+    const rightArch = stage.querySelector('[data-arch="right"]');
+    const needle = stage.querySelector('[data-compass-needle]');
+    if (!leftArch || !rightArch) return;
+
+    // Progressive enhancement for staggered entry animation
+    if (!prefersReducedMotion) {
+      stage.classList.add('js-compass-ready');
+    }
+
+    // Set initial mobile accordion state (< 768px: left arch open, right arch collapsed so tap expands it)
+    function syncResponsiveExpandState(isInitial) {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile && isInitial) {
+        leftArch.classList.add('is-expanded');
+        leftArch.setAttribute('aria-expanded', 'true');
+        rightArch.classList.remove('is-expanded');
+        rightArch.setAttribute('aria-expanded', 'false');
+      } else if (!isMobile) {
+        leftArch.classList.add('is-expanded');
+        leftArch.setAttribute('aria-expanded', 'true');
+        rightArch.classList.add('is-expanded');
+        rightArch.setAttribute('aria-expanded', 'true');
+      }
+    }
+    syncResponsiveExpandState(true);
+    window.addEventListener('resize', () => syncResponsiveExpandState(false), { passive: true });
+
+    // Point compass needle toward 'left', 'right', or 'idle'
+    function pointCompass(direction) {
+      const isMobile = window.innerWidth < 768;
+      const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+      stage.classList.add('has-interacted');
+      if (needle) needle.classList.remove('is-settling');
+
+      if (direction === 'left') {
+        stage.classList.add('has-active-left');
+        stage.classList.remove('has-active-right');
+        const angle = isMobile ? 0 : (isRtl ? 68 : -68);
+        if (needle) needle.style.setProperty('--needle-angle', `${angle}deg`);
+      } else if (direction === 'right') {
+        stage.classList.add('has-active-right');
+        stage.classList.remove('has-active-left');
+        const angle = isMobile ? 180 : (isRtl ? -68 : 68);
+        if (needle) needle.style.setProperty('--needle-angle', `${angle}deg`);
+      } else {
+        stage.classList.remove('has-active-left', 'has-active-right');
+        if (needle) needle.style.setProperty('--needle-angle', '0deg');
+      }
+    }
+
+    // Hover & Focus events
+    [leftArch, rightArch].forEach(arch => {
+      const dir = arch.getAttribute('data-arch');
+
+      arch.addEventListener('mouseenter', () => {
+        if (window.innerWidth >= 768) {
+          pointCompass(dir);
+        }
+      });
+
+      arch.addEventListener('mouseleave', () => {
+        if (window.innerWidth >= 768 && document.activeElement !== leftArch && document.activeElement !== rightArch) {
+          pointCompass('idle');
+        }
+      });
+
+      arch.addEventListener('focus', () => {
+        pointCompass(dir);
+      });
+
+      arch.addEventListener('blur', () => {
+        setTimeout(() => {
+          if (document.activeElement !== leftArch && document.activeElement !== rightArch) {
+            pointCompass('idle');
+          }
+        }, 50);
+      });
+
+      // Click / Tap: swing needle to tapped arch, and on mobile (<768px) expand/toggle its chips
+      arch.addEventListener('click', () => {
+        pointCompass(dir);
+        if (window.innerWidth < 768) {
+          const willExpand = !arch.classList.contains('is-expanded');
+          arch.classList.toggle('is-expanded', willExpand);
+          arch.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+        }
+      });
+
+      // Keyboard Enter / Space support
+      arch.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          arch.click();
+        }
+      });
+    });
+
+    // Scroll entry observer: stagger arch rise-in and spring-settle needle
+    if ('IntersectionObserver' in window && !prefersReducedMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            stage.classList.add('is-inview');
+            if (needle) {
+              needle.classList.add('is-settling');
+              setTimeout(() => {
+                needle.classList.remove('is-settling');
+              }, 1400);
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(stage);
+    } else {
+      stage.classList.add('is-inview');
+    }
+  });
+}
+
+
+
+
 
