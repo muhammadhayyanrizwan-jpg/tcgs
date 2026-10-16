@@ -720,6 +720,13 @@ html[dir="rtl"] .founder-deco-quote {
   margin-bottom: 2rem;
 }
 
+.commitment-band .btn,
+.commitment-band a.btn,
+.commitment-band .btn-outline-white {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
 /* Circular Orbit Graphic */
 .orbit-graphic-container {
   display: flex;

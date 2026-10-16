@@ -328,15 +328,21 @@ button, input, select, textarea { font: inherit; }
   transform: translateY(-2px);
 }
 
-.btn-outline-white {
+.btn-outline-white,
+a.btn-outline-white,
+a.btn-outline-white:visited,
+a.btn-outline-white:link {
   background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF !important;
 }
 
-.btn-outline-white:hover {
+.btn-outline-white:hover,
+a.btn-outline-white:hover,
+a.btn-outline-white:focus {
   border-color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
 }
 
