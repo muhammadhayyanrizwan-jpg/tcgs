@@ -279,7 +279,12 @@ function initStatsCounters() {
       if (entry.isIntersecting && !hasAnimated) {
         hasAnimated = true;
         statCards.forEach(counter => {
-          const target = parseFloat(counter.getAttribute('data-target') || counter.textContent);
+          const raw = (counter.getAttribute('data-target') || counter.textContent || '').trim();
+          if (!/^\d+(\.\d+)?$/.test(raw)) {
+            return;
+          }
+          const target = parseFloat(raw);
+          if (isNaN(target)) return;
           const isDecimal = target % 1 !== 0;
           const duration = 2000;
           const startTime = performance.now();
