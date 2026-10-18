@@ -5,73 +5,49 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Language Engine Setup
+  // 1. Language Engine Setup (Instant, zero DOM thrash if English)
   initLanguageEngine();
 
-  // 2. Header & Mobile Menu
+  // 2. Header & Mobile Menu (Critical for top navigation)
   initHeaderInteractions();
 
   // 3. Karachi Real-Time Office Hours Live Badge
   updateKarachiOfficeStatus();
-  setInterval(updateKarachiOfficeStatus, 60000); // Check every minute
+  setInterval(updateKarachiOfficeStatus, 60000);
 
-  // 4. Scroll Reveal Animations
+  // 4. Scroll Reveal Animations (Uses IntersectionObserver, non-blocking)
   initScrollReveal();
 
   // 5. Animated Stats Counters
   initStatsCounters();
 
-  // 6. Interactive Classes Offered Tabs (Admission Page)
-  initClassTabs();
-
-  // 7. Interactive Documents Checklist (Admission Page)
-  initDocumentChecklist();
-
-  // 8. Searchable FAQ Accordion (Admission & Contact Pages)
-  initFaqAccordion();
-
-  // 9. Forms & Validation
-  initFormHandlers();
-
-  // 10. Intelligent Lazy Map Loading (Zero Blocking on Initial Load)
-  initLazyMap();
-
-  // 11. Back to Top Button
-  initBackToTop();
-
-  // 12. Scroll-Driven Stacked Cards Deck (TCGS Advantage Section)
-  initStackedAdvantageDeck();
-
-  // 13. Interactive Gallery Filters & Lightbox Modal
-  initGalleryFilters();
-  initGalleryLightbox();
-
-  // 14. Three Promises Auto-Advancing Tabs & Accordion (Home Page)
-  initPromisesSection();
-
-  // 15. Study at TCGS Expanding Image Panels (Home Page)
-  initStudyTcgsSection();
-
-  // 16. Result Quick-Check Band (Home Page)
-  initQuickResultCheck();
-
-  // 17. Since 1992 Parallax, Timeline & Year Count (About Page)
-  initSince1992Section();
-
-  // 18. Newsletter Subscription Strip with Honeypot
-  initNewsletterForm();
-
-  // 19. Instagram Dynamic Social Link Visibility
-  initInstagramSocialLinks();
-
-  // 20. Dynamic Copyright Year
+  // 6. Dynamic Copyright Year
   initCurrentYear();
 
-  // 21. Milad Function Picture Slider (Home Page)
-  initMiladSlider();
+  // Defer non-critical and below-the-fold interactions so FCP/LCP happen immediately
+  const deferTask = window.requestIdleCallback 
+    ? (fn) => window.requestIdleCallback(fn, { timeout: 1500 }) 
+    : (fn) => setTimeout(fn, 50);
 
-  // 22. Ethical Compass Two Arch Doors & Swinging Compass Medallion
-  initEthicalCompassSection();
+  deferTask(() => {
+    initClassTabs();
+    initDocumentChecklist();
+    initFaqAccordion();
+    initFormHandlers();
+    initLazyMap();
+    initBackToTop();
+    initStackedAdvantageDeck();
+    initGalleryFilters();
+    initGalleryLightbox();
+    initPromisesSection();
+    initStudyTcgsSection();
+    initQuickResultCheck();
+    initSince1992Section();
+    initNewsletterForm();
+    initInstagramSocialLinks();
+    initMiladSlider();
+    initEthicalCompassSection();
+  });
 });
 
 /* --------------------------------------------------------------------------
@@ -79,29 +55,57 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 let currentLang = 'en';
 
-function initLanguageEngine() {
-  const langBtns = document.querySelectorAll('.lang-btn');
-  if (!langBtns.length) {
-    setLanguage('en');
+function ensureTranslationsLoaded(callback) {
+  if (typeof TCGS_TRANSLATIONS !== 'undefined') {
+    if (callback) callback();
     return;
   }
+  const s = document.createElement('script');
+  s.src = 'js/translations.js';
+  s.onload = () => {
+    if (callback) callback();
+  };
+  document.head.appendChild(s);
+}
 
-  const savedLang = localStorage.getItem('tcgs_lang') || 'en';
-  setLanguage(savedLang);
+function initLanguageEngine() {
+  const langBtns = document.querySelectorAll('.lang-btn');
+  let savedLang = 'en';
+  try {
+    savedLang = localStorage.getItem('tcgs_lang') || 'en';
+  } catch (e) {
+    savedLang = 'en';
+  }
+
+  if (savedLang === 'ur') {
+    ensureTranslationsLoaded(() => setLanguage('ur', true));
+  } else {
+    currentLang = 'en';
+    langBtns.forEach(btn => {
+      if (btn.getAttribute('data-lang') === 'en') {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
 
   langBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const selected = e.target.getAttribute('data-lang');
+      const selected = btn.getAttribute('data-lang');
       if (selected && selected !== currentLang) {
-        setLanguage(selected);
+        ensureTranslationsLoaded(() => setLanguage(selected, true));
       }
     });
   });
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, forceTranslate = false) {
+  const prevLang = currentLang;
   currentLang = lang;
-  localStorage.setItem('tcgs_lang', lang);
+  try {
+    localStorage.setItem('tcgs_lang', lang);
+  } catch (e) {}
 
   const html = document.documentElement;
   const isUrdu = (lang === 'ur');
@@ -131,8 +135,9 @@ function setLanguage(lang) {
     }
   });
 
-  // Apply translations to all data-i18n elements
-  if (typeof TCGS_TRANSLATIONS !== 'undefined' && TCGS_TRANSLATIONS[lang]) {
+  // Only rewrite innerHTML if switching to Urdu OR explicitly switching from Urdu back to English
+  const shouldTranslate = (lang === 'ur') || forceTranslate || (prevLang === 'ur' && lang === 'en');
+  if (shouldTranslate && typeof TCGS_TRANSLATIONS !== 'undefined' && TCGS_TRANSLATIONS[lang]) {
     const dict = TCGS_TRANSLATIONS[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
