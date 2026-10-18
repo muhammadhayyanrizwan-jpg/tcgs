@@ -48,7 +48,7 @@
   color: #FFFFFF !important;
   font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 680px;
-  margin: 0 auto 2.25rem auto;
+  margin: 0 auto;
   line-height: 1.7;
 }
 

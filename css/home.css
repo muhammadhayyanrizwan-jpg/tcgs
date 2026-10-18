@@ -609,8 +609,10 @@ html[dir="rtl"] .founder-deco-quote {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .stat-ticket-card {
@@ -1614,9 +1616,10 @@ html[dir="rtl"] .card-corner-shape {
 .arch-door-top {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1.25rem;
+  gap: clamp(0.5rem, 1.2vw, 1rem);
+  padding: 0 0.5rem;
   margin-bottom: 1.5rem;
+  min-width: 0;
 }
 
 .arch-icon-badge {
@@ -1651,6 +1654,8 @@ html[dir="rtl"] .card-corner-shape {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .arch-pillar-tag {
@@ -1659,6 +1664,7 @@ html[dir="rtl"] .card-corner-shape {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .arch-door-navy .arch-pillar-tag {
@@ -1670,8 +1676,9 @@ html[dir="rtl"] .card-corner-shape {
 }
 
 .arch-pillar-sub {
-  font-size: 0.85rem;
+  font-size: clamp(0.8rem, 1.1vw, 0.88rem);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .arch-door-navy .arch-pillar-sub {
@@ -1686,11 +1693,15 @@ html[dir="rtl"] .card-corner-shape {
 .arch-outlined-num {
   margin-left: auto;
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 4vw, 3.6rem);
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
   font-weight: 800;
   line-height: 1;
   color: transparent;
   user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
+  letter-spacing: -0.02em;
 }
 
 html[dir="rtl"] .arch-outlined-num {
@@ -1886,7 +1897,8 @@ html[dir="rtl"] .arch-outlined-num {
     padding: 4rem 2.25rem 2.25rem 2.25rem;
   }
   .arch-door-top {
-    padding: 0 1rem;
+    padding: 0;
+    gap: 0.75rem;
   }
   .compass-medallion {
     width: 96px;
@@ -1931,7 +1943,18 @@ html[dir="rtl"] .arch-outlined-num {
   }
 
   .arch-door-top {
-    padding: 0 0.85rem;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .arch-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .arch-outlined-num {
+    font-size: clamp(2rem, 5.5vw, 2.6rem);
   }
 
   .compass-arches-stage.has-active-left .arch-door-navy,
